@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Consultoría Martínez — asesoría contable, financiera, fiscal, jurídica y de capital humano para emprendedores y PYMEs en Cuba.">
 <meta name="theme-color" content="#4d2b86">
-<title>Consultoría Martínez | Al servicio de tus finanzas · 05.5.2 · VISION 10000</title>
+<title>Consultoría Martínez | Al servicio de tus finanzas · 05.5.2 · A/B/C VISUAL POLISH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -111,7 +111,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
 
 <style id="vision-10000-overrides">
 /* =========================================================
-   CONSULTORÍA MARTÍNEZ 05.5.2 · VISION 10000 — VISION 10000
+   CONSULTORÍA MARTÍNEZ 05.5.2 · A/B/C VISUAL POLISH
    Visual layer inspired by the approved reference mockup.
    ========================================================= */
 :root{
@@ -452,6 +452,267 @@ footer{background:#06102d}
 }
 </style>
 
+
+<style id="cm-0552-abc-visual-polish">
+/* =========================================================
+   CONSULTORÍA MARTÍNEZ 05.5.2 A/B/C — VISUAL POLISH
+   A: Hero corrected / avatar removed from Hero
+   B: Office image presence + headline contrast
+   C: Services cards premium refinement
+   ========================================================= */
+
+/* ---------- A/B: HERO ---------- */
+.hero{
+  min-height:760px;
+  height:min(760px,calc(100vh - 78px));
+  max-height:none;
+  isolation:isolate;
+}
+.hero-bg{
+  background-image:
+    linear-gradient(90deg,rgba(8,19,50,.40) 0%,rgba(8,19,50,.16) 52%,rgba(8,19,50,.10) 100%),
+    url("images/office-bg.jpg");
+  background-position:center 47%;
+  background-size:cover;
+  filter:saturate(1.24) contrast(1.05) brightness(.97);
+  transform:scale(1.02);
+}
+.hero-bg:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 42% 42%,rgba(5,10,30,.05) 0%,rgba(5,10,30,.18) 56%,rgba(5,10,30,.34) 100%),
+    linear-gradient(180deg,rgba(8,19,50,.06) 0%,rgba(8,19,50,.04) 60%,rgba(8,19,50,.42) 100%);
+  pointer-events:none;
+}
+.hero-content{
+  width:min(1180px,calc(100% - 48px));
+  max-width:1180px;
+  padding:70px 48% 58px 0;
+}
+.hero h1{
+  max-width:760px;
+  font-size:clamp(2.55rem,5.1vw,4.8rem);
+  line-height:.98;
+  letter-spacing:-.7px;
+  text-shadow:0 5px 20px rgba(0,0,0,.62),0 12px 34px rgba(0,0,0,.28);
+}
+.hero h1 span{
+  display:inline;
+  color:#fff;
+  text-shadow:0 3px 12px rgba(18,5,50,.55);
+  background:linear-gradient(100deg,rgba(77,25,209,.98),rgba(122,47,242,.93));
+  padding:.07em .16em .10em;
+  border-radius:.14em;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+  box-shadow:0 10px 30px rgba(42,11,100,.22);
+}
+.hero p{
+  max-width:650px;
+  margin:24px 0 22px;
+  font-size:clamp(1rem,1.55vw,1.18rem);
+  color:rgba(255,255,255,.96);
+  text-shadow:0 2px 12px rgba(0,0,0,.66);
+}
+.hero-benefits{
+  gap:12px 22px;
+  margin:12px 0 28px;
+}
+.hero-benefits span{
+  min-height:30px;
+}
+.hero .btn-primary{
+  min-height:56px;
+  padding:0 30px;
+  box-shadow:0 14px 35px rgba(48,12,129,.35);
+}
+.hero .btn-light{
+  min-height:56px;
+  background:rgba(10,16,40,.28);
+  border-color:rgba(255,255,255,.72);
+  box-shadow:0 12px 30px rgba(0,0,0,.14);
+}
+/* The old Hero avatar is intentionally disabled. The definitive half-body avatar
+   will live only inside the dedicated assistant module. */
+.hero-assistant{display:none!important}
+
+/* ---------- C: SERVICES ---------- */
+.services{
+  padding:82px 0 92px;
+  background:#121334;
+}
+.services:before{
+  background:
+    linear-gradient(135deg,rgba(7,10,35,.76),rgba(28,12,56,.72)),
+    url("images/office-bg.jpg");
+  background-position:center 54%;
+  background-size:cover;
+  opacity:1;
+}
+.section-heading{
+  max-width:920px;
+  margin:0 auto 38px;
+}
+.section-heading .eyebrow{
+  margin-bottom:15px;
+}
+.section-heading h2{
+  font-size:clamp(2.05rem,4vw,3.35rem);
+  letter-spacing:-.6px;
+}
+.section-heading p{
+  max-width:760px;
+  margin-top:14px;
+  font-size:.98rem;
+}
+.services-layout{
+  grid-template-columns:minmax(0,1fr) 390px;
+  gap:28px;
+  align-items:stretch;
+}
+.services-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.service-card{
+  min-height:190px;
+  padding:22px 20px 20px;
+  border-radius:18px;
+  background:rgba(255,255,255,.975);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 16px 40px rgba(0,0,0,.22);
+}
+.service-card:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:3px;
+  background:linear-gradient(90deg,#4d19d1,#9d68ff);
+  opacity:.55;
+}
+.service-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 52px rgba(0,0,0,.28);
+}
+.icon-box{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  margin-bottom:15px;
+  background:linear-gradient(145deg,#efe8ff,#faf8ff);
+  box-shadow:inset 0 0 0 1px rgba(77,25,209,.08);
+}
+.icon-box svg{width:28px;height:28px}
+.service-card h3{
+  font-size:.98rem;
+  line-height:1.22;
+  margin-bottom:7px;
+}
+.service-card p{
+  font-size:.78rem;
+  line-height:1.5;
+  color:#65647a;
+}
+.service-card .service-link{
+  margin-top:13px;
+  font-size:.67rem;
+}
+
+/* Dedicated assistant card: visual space is reserved for the future definitive
+   half-body / arms-crossed transparent avatar without touching the Hero. */
+.assistant{
+  align-self:stretch;
+  min-height:100%;
+  border-radius:24px;
+  box-shadow:0 26px 68px rgba(0,0,0,.34);
+}
+.assistant-head{
+  min-height:360px;
+  padding:24px 20px 0;
+}
+.avatar-wrap{
+  width:330px;
+  height:310px;
+  bottom:0;
+}
+.question{
+  width:50px;
+  height:50px;
+  right:8px;
+  top:22px;
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:1100px){
+  .hero{height:760px;min-height:760px}
+  .hero-content{padding-right:42%;}
+  .services-layout{grid-template-columns:1fr 430px}
+}
+@media(max-width:800px){
+  .hero{
+    min-height:760px;
+    height:760px;
+    padding-top:72px;
+  }
+  .hero-bg{
+    background-image:
+      linear-gradient(180deg,rgba(8,19,50,.18) 0%,rgba(8,19,50,.20) 42%,rgba(8,19,50,.55) 100%),
+      url("images/office-bg.jpg");
+    background-position:center 47%;
+    filter:saturate(1.28) contrast(1.05) brightness(.96);
+  }
+  .hero-content{
+    width:min(calc(100% - 28px),760px);
+    padding:74px 8px 58px;
+    text-align:center;
+    align-self:center;
+  }
+  .hero-content .eyebrow{margin-left:auto;margin-right:auto}
+  .hero h1{
+    max-width:700px;
+    margin:0 auto;
+    font-size:clamp(2.15rem,8.8vw,3.55rem);
+    line-height:1.00;
+  }
+  .hero h1 span{padding:.08em .14em .10em}
+  .hero p{
+    max-width:620px;
+    margin:22px auto 20px;
+    font-size:1rem;
+  }
+  .hero-benefits{justify-content:center;gap:10px 18px;margin-bottom:25px}
+  .cta-row{justify-content:center}
+  .hero .btn{width:100%;max-width:340px}
+  .services{padding:70px 0 78px}
+  .section-heading{text-align:center;margin-bottom:28px}
+  .services-layout{grid-template-columns:1fr;gap:24px}
+  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .assistant{max-width:620px;margin:0 auto}
+}
+@media(max-width:520px){
+  .hero{
+    min-height:735px;
+    height:735px;
+  }
+  .hero-content{padding:64px 4px 50px}
+  .hero h1{font-size:clamp(2rem,9.2vw,2.8rem);letter-spacing:-.45px}
+  .hero p{font-size:.93rem;line-height:1.55}
+  .hero-benefits{font-size:11px;gap:8px 14px}
+  .hero-benefits b{width:26px;height:26px}
+  .hero .btn{min-height:52px;font-size:10px}
+  .services{padding:62px 0 70px}
+  .section-heading h2{font-size:2rem}
+  .section-heading p{font-size:.88rem}
+  .services-grid{grid-template-columns:1fr;gap:12px}
+  .service-card{min-height:0;padding:20px 18px}
+  .assistant-head{min-height:350px}
+  .avatar-wrap{width:290px;height:305px}
+}
+@media(prefers-reduced-motion:reduce){.service-card,.btn{transition:none!important}}
+</style>
+
 </head>
 <body>
 <a class="skip" href="#inicio">Saltar al contenido</a>
@@ -473,10 +734,6 @@ footer{background:#06102d}
 <section class="hero" id="inicio">
   <div class="hero-bg" aria-hidden="true"></div>
   
-  <div class="hero-assistant" aria-hidden="true">
-    <div class="hero-question">?</div>
-    <img src="images/assistant.png" alt="" loading="eager">
-  </div>
 
 <div class="hero-content">
     <div class="eyebrow">Consultoría especializada para Cuba</div>
