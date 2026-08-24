@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Consultoría Martínez — asesoría contable, financiera, fiscal, jurídica y de capital humano para emprendedores y PYMEs en Cuba.">
 <meta name="theme-color" content="#4d2b86">
-<title>Consultoría Martínez | Al servicio de tus finanzas · 05.5.2</title>
+<title>Consultoría Martínez | Al servicio de tus finanzas · 05.5.2 · VISION 10000</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -108,6 +108,350 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
 @media(max-width:520px){.assistant{border-radius:20px}.assistant-head{border-radius:20px 20px 0 0;padding-top:20px}.avatar-wrap{height:315px;width:min(100%,350px);margin-bottom:-28px}.question{right:10px;top:18px;width:38px;height:38px}.chat{border-radius:18px 18px 0 0;padding:22px 14px 16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.service-card,.btn{transition:none}}
 </style>
+
+<style id="vision-10000-overrides">
+/* =========================================================
+   CONSULTORÍA MARTÍNEZ 05.5.2 · VISION 10000 — VISION 10000
+   Visual layer inspired by the approved reference mockup.
+   ========================================================= */
+:root{
+  --vm-purple:#4d19d1;
+  --vm-violet:#7a2ff2;
+  --vm-blue:#173bff;
+  --vm-navy:#081332;
+  --vm-white:#ffffff;
+  --vm-soft:#f5f6ff;
+  --vm-green:#20d66b;
+}
+body{background:#081332}
+.site-header{
+  background:rgba(255,255,255,.93);
+  box-shadow:0 8px 34px rgba(8,19,50,.12);
+}
+.header-inner{min-height:78px}
+.brand img{width:60px;height:60px}
+.brand-name{font-size:15px}
+.nav{gap:28px}
+.nav a{font-size:10px}
+.hero{
+  min-height:720px;
+  height:min(760px,92vh);
+  max-height:820px;
+  align-items:stretch;
+  padding-top:78px;
+}
+.hero-bg{
+  background-image:
+    linear-gradient(90deg,rgba(8,19,50,.64) 0%,rgba(8,19,50,.24) 45%,rgba(8,19,50,.04) 100%),
+    url("images/office-bg.jpg");
+  background-position:center;
+  filter:saturate(1.18) contrast(1.02);
+}
+.hero:after{
+  height:130px;
+  background:linear-gradient(transparent,rgba(12,9,22,.72));
+}
+.hero-content{
+  width:min(1420px,calc(100% - 48px));
+  text-align:left;
+  align-self:center;
+  margin:0 auto;
+  padding:80px 48% 60px 0;
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+}
+.eyebrow{
+  background:linear-gradient(135deg,var(--vm-purple),var(--vm-violet));
+  border-radius:999px;
+  padding:9px 16px;
+  width:max-content;
+  max-width:100%;
+  letter-spacing:1.2px;
+}
+.eyebrow:before,.eyebrow:after{display:none}
+.hero h1{
+  max-width:780px;
+  font-size:clamp(2.65rem,5.4vw,5rem);
+  text-shadow:0 5px 24px rgba(0,0,0,.55);
+}
+.hero h1 span{
+  color:#7f4cff;
+  text-shadow:0 3px 16px rgba(255,255,255,.35),0 4px 24px rgba(0,0,0,.72);
+}
+.hero p{
+  max-width:650px;
+  margin:20px 0 20px;
+  color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.5);
+}
+.hero-benefits{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  margin:12px 0 24px;
+  color:#fff;
+  font:700 12px/1.25 "Montserrat",sans-serif;
+  text-shadow:0 2px 8px rgba(0,0,0,.55);
+}
+.hero-benefits span{display:flex;align-items:center;gap:8px}
+.hero-benefits b{
+  display:grid;place-items:center;width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,#5a20e8,#8b55ff);box-shadow:0 6px 18px rgba(62,19,167,.35)
+}
+.hero-assistant{
+  position:absolute;
+  z-index:4;
+  right:max(3%,calc((100vw - 1420px)/2));
+  bottom:0;
+  width:min(470px,36vw);
+  height:620px;
+  pointer-events:none;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+.hero-assistant img{
+  height:100%;
+  width:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:drop-shadow(0 26px 38px rgba(0,0,0,.34));
+}
+.hero-question{
+  position:absolute;
+  z-index:5;
+  left:7%;
+  top:14%;
+  width:62px;height:62px;border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;font:900 30px "Montserrat";
+  background:linear-gradient(145deg,#5b20df,#9d6aff);
+  border:3px solid rgba(255,255,255,.88);
+  box-shadow:0 12px 32px rgba(50,12,120,.42);
+}
+.cta-row{justify-content:flex-start}
+.btn-primary{background:linear-gradient(135deg,var(--vm-purple),var(--vm-violet))}
+.btn-primary:hover{box-shadow:0 18px 45px rgba(75,25,210,.48)}
+.product{
+  order:3;
+  padding:76px 0;
+  background:#f4f6ff;
+  color:#14204c;
+}
+.product:before{
+  background:
+    linear-gradient(135deg,rgba(244,246,255,.92),rgba(226,231,255,.78)),
+    url("images/office-bg.jpg");
+  opacity:1;
+  mix-blend-mode:normal;
+}
+.product-inner{
+  grid-template-columns:1fr 1.1fr;
+  gap:50px;
+}
+.product-copy{color:#14204c}
+.product-copy .eyebrow{color:#fff}
+.product-copy h2{font-size:clamp(2rem,4vw,3.2rem)}
+.product-copy h2 span{color:var(--vm-purple)}
+.product-copy p{color:#35436c}
+.feature-list li{color:#28355f}
+.check{background:#eee8ff;color:var(--vm-purple)}
+.services{
+  order:2;
+  padding:68px 0 78px;
+  background:#17143a;
+}
+.services:before{
+  background:
+    linear-gradient(rgba(11,10,35,.70),rgba(17,12,42,.74)),
+    url("images/office-bg.jpg");
+  opacity:1;
+}
+.section-heading{text-align:left;margin-bottom:30px}
+.section-heading h2{font-size:clamp(2rem,4vw,3.1rem)}
+.services-layout{
+  grid-template-columns:minmax(0,1fr) 390px;
+  gap:28px;
+}
+.services-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.service-card{
+  min-height:166px;
+  padding:20px 18px;
+  border-radius:16px;
+}
+.service-card h3{font-size:1rem}
+.service-card p{font-size:.78rem}
+.icon-box{
+  width:46px;height:46px;border-radius:13px;
+  background:#f0eaff;color:var(--vm-purple);
+}
+.service-link{font-size:.68rem}
+.assistant{
+  position:relative;
+  top:auto;
+  width:100%;
+  max-width:none;
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(241,237,255,.94));
+  box-shadow:0 28px 70px rgba(0,0,0,.34);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.9);
+}
+.assistant-head{
+  min-height:390px;
+  padding:22px 20px 0;
+  background:
+    radial-gradient(circle at 70% 35%,rgba(143,91,255,.25),transparent 42%),
+    linear-gradient(180deg,#ffffff 0%,#eee8ff 100%);
+}
+.assistant-head h3{
+  position:relative;
+  z-index:3;
+  font-size:1.35rem;
+  line-height:1.08;
+  color:#182253;
+}
+.assistant-head h3 span{color:var(--vm-purple)}
+.avatar-wrap{
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:330px;
+  height:350px;
+  margin:0;
+  background:transparent;
+}
+.avatar-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:drop-shadow(0 18px 30px rgba(34,14,79,.28));
+}
+.question{
+  width:52px;height:52px;right:10px;top:20px;
+  font-size:24px;background:linear-gradient(145deg,#5a20e8,#9162ff);
+  border:3px solid #fff;box-shadow:0 10px 28px rgba(55,18,130,.35);
+}
+.chat{
+  position:relative;
+  z-index:3;
+  margin:0;
+  border-radius:22px 22px 0 0;
+  padding:20px 16px 16px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 -12px 34px rgba(31,15,73,.12);
+}
+.chat-window{min-height:68px;max-height:150px}
+.bubble.bot{background:#202d83;color:#fff}
+.quick button{
+  border-color:#ded7ef;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(38,17,79,.06);
+}
+.wa{background:linear-gradient(135deg,#1bd36b,#0aae52);font-size:.72rem}
+.resources{
+  order:4;
+  background:#f8f9ff;
+  padding:58px 0 66px;
+}
+.resources .section-heading{color:#15204d}
+.resources .section-heading p{color:#68718c}
+.tabs{justify-content:flex-start}
+.tab.active{background:var(--vm-purple)}
+.news-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.news-card{
+  border-radius:16px;
+  box-shadow:0 12px 34px rgba(28,32,76,.10);
+  overflow:hidden;
+}
+.news-art{min-height:130px}
+.contact{
+  order:5;
+  background:#071232;
+  padding:62px 0;
+}
+.contact-card{
+  border-radius:28px;
+  background:linear-gradient(120deg,#5d18dc,#163eff);
+  box-shadow:0 22px 65px rgba(19,15,69,.34);
+}
+.trust-banner{
+  background:linear-gradient(110deg,#5d18dc,#173cff);
+  color:#fff;
+  padding:18px 0;
+}
+.trust-inner{display:flex;align-items:center;gap:18px}
+.trust-icon{font-size:2.5rem}
+.trust-inner strong{display:block;font:800 1.35rem "Montserrat"}
+.trust-inner span{display:block;opacity:.86}
+.trust-wa{
+  margin-left:auto;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 24px;border-radius:999px;
+  background:#16d568;color:#fff;text-decoration:none;
+  font:800 .72rem "Montserrat";
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+footer{background:#06102d}
+@media(min-width:1101px){
+  main{display:flex;flex-direction:column}
+  .hero{order:1}
+  .services{order:2}
+  .product{order:3}
+  .resources{order:4}
+  .contact{order:5}
+}
+@media(max-width:1100px){
+  .hero{height:auto;min-height:820px}
+  .hero-content{padding:110px 44% 70px 0}
+  .hero-assistant{width:40vw;height:540px}
+  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .services-layout{grid-template-columns:1fr 430px}
+}
+@media(max-width:800px){
+  .hero{min-height:900px}
+  .hero-content{
+    width:min(calc(100% - 28px),var(--max));
+    padding:92px 18px 350px;
+    text-align:center;
+  }
+  .hero-content .eyebrow{margin-left:auto;margin-right:auto}
+  .hero h1{font-size:clamp(2.15rem,9vw,3.6rem)}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-benefits{justify-content:center}
+  .cta-row{justify-content:center}
+  .hero-assistant{
+    width:330px;height:380px;
+    right:50%;transform:translateX(50%);
+    bottom:0;
+  }
+  .hero-question{left:4%;top:5%}
+  .services-layout{grid-template-columns:1fr}
+  .assistant{max-width:560px;margin:0 auto}
+  .product-inner{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  .trust-inner{flex-wrap:wrap}
+  .trust-wa{margin-left:0}
+}
+@media(max-width:520px){
+  .hero{min-height:850px}
+  .hero-content{padding-bottom:310px}
+  .hero-assistant{width:300px;height:340px}
+  .hero-question{width:46px;height:46px;font-size:22px}
+  .services-grid{grid-template-columns:1fr}
+  .assistant-head{min-height:360px}
+  .avatar-wrap{width:290px;height:320px}
+  .trust-inner strong{font-size:1.05rem}
+  .trust-inner span{font-size:.82rem}
+}
+</style>
+
 </head>
 <body>
 <a class="skip" href="#inicio">Saltar al contenido</a>
@@ -128,16 +472,29 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
 <main>
 <section class="hero" id="inicio">
   <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-content">
+  
+  <div class="hero-assistant" aria-hidden="true">
+    <div class="hero-question">?</div>
+    <img src="images/assistant.png" alt="" loading="eager">
+  </div>
+
+<div class="hero-content">
     <div class="eyebrow">Consultoría especializada para Cuba</div>
     <h1>Potencia tu PYME en Cuba <span>con asesoría de excelencia.</span></h1>
     <p>Contabilidad, finanzas, fiscalidad, capital humano y asesoría jurídica, integrados con la visión tecnológica de Finza.M.</p>
+    
+    <div class="hero-benefits" aria-label="Beneficios">
+      <span><b>✓</b> Resultados reales</span>
+      <span><b>✦</b> Procesos optimizados</span>
+      <span><b>✚</b> Acompañamiento personalizado</span>
+    </div>
+
     <div class="cta-row"><a class="btn btn-primary" href="#contacto">Solicita tu consulta gratuita</a><a class="btn btn-light" href="#finza">Conoce Finza.M</a></div>
   </div>
   <a class="hero-scroll" href="#servicios">Explorar</a>
 </section>
 
-<section class="product" id="finza">
+<section class="product" id="finza" data-original-order="product">
   <div class="container product-inner">
     <div class="product-copy">
       <div class="eyebrow">Tecnología aplicada a tus finanzas</div>
@@ -147,6 +504,9 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
         <li><span class="check">✓</span><span>Gestión contable y financiera orientada a la realidad de las PYMEs cubanas.</span></li>
         <li><span class="check">✓</span><span>Reportes y visualización para entender resultados, liquidez y evolución.</span></li>
         <li><span class="check">✓</span><span>Arquitectura preparada para crecer por módulos según las necesidades del usuario.</span></li>
+        <li><span class="check">✓</span><span>Control de inventarios y operaciones.</span></li>
+        <li><span class="check">✓</span><span>Facturación, reportes y multiusuario.</span></li>
+
       </ul>
       <a class="btn btn-primary" href="#contacto">Quiero conocer Finza.M</a>
     </div>
@@ -157,7 +517,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
   </div>
 </section>
 
-<section class="services" id="servicios">
+<section class="services" id="servicios" data-original-order="services">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Soluciones profesionales</div>
@@ -210,6 +570,18 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
   <div class="container contact-card">
     <div><div class="eyebrow">Hablemos de tu negocio</div><h2>Deja de perseguir los números.<br><span>Empieza a entenderlos.</span></h2><p>Solicita una primera consulta y cuéntanos qué necesitas ordenar, revisar o mejorar. La respuesta correcta empieza por entender el problema real.</p></div>
     <div class="contact-actions"><a class="btn btn-primary" href="https://wa.me/5354514448?text=Hola%20Consultor%C3%ADa%20Mart%C3%ADnez%2C%20quiero%20solicitar%20una%20consulta." target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="btn btn-light" href="#inicio">Volver arriba</a></div>
+  </div>
+
+</section>
+
+<section class="trust-banner" aria-label="Llamada a la acción">
+  <div class="container trust-inner">
+    <div class="trust-icon">💬</div>
+    <div>
+      <strong>Tu tranquilidad financiera, nuestra prioridad</strong>
+      <span>Confía en la experiencia, confía en Consultoría Martínez.</span>
+    </div>
+    <a class="trust-wa" href="https://wa.me/5354514448?text=Hola%20Consultor%C3%ADa%20Mart%C3%ADnez%2C%20quiero%20una%20consulta." target="_blank" rel="noopener noreferrer">◉ &nbsp; CONTÁCTANOS POR WHATSAPP</a>
   </div>
 </section>
 </main>
@@ -374,5 +746,20 @@ $("#adminClose").onclick=closeAdmin;$("#adminOverlay").addEventListener("click",
 applyConfig();renderAdminNews();
 })();
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const main=document.querySelector("main");
+  const hero=document.getElementById("inicio");
+  const services=document.getElementById("servicios");
+  const product=document.getElementById("finza");
+  const resources=document.getElementById("recursos");
+  const contact=document.getElementById("contacto");
+  if(main && hero && services && product && resources && contact){
+    [hero,services,product,resources,contact].forEach(s=>main.appendChild(s));
+  }
+});
+</script>
+
 </body>
 </html>
