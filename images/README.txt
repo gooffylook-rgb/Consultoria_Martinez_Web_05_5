@@ -1,33 +1,24 @@
-CONSULTORÍA MARTÍNEZ 05.5.2 — VISION 10000
+CONSULTORÍA MARTÍNEZ — 05.5.2 A/B/C VISUAL POLISH
 
-Esta versión transforma la interfaz para acercarla al mockup aprobado:
-- Hero inmersivo con mayor presencia de la oficina.
-- Jerarquía visual del titular y CTA.
-- Servicios en seis tarjetas.
-- Asistente virtual con panel de conversación.
-- Finza.M después de Servicios.
-- Recursos y actualizaciones en tarjetas.
-- CTA final por WhatsApp.
-- Footer corporativo.
-- Diseño responsive.
+Cambios realizados:
+A — HERO: se eliminó completamente el avatar del Hero. El Hero queda limpio y orientado a conversión.
+B — FONDO/LEGIBILIDAD: mayor presencia de la fotografía de oficina, saturación controlada, contraste y tratamiento específico para móvil. “CON ASESORÍA DE EXCELENCIA” ahora tiene una cápsula púrpura de alto contraste para evitar pérdida de legibilidad.
+C — SERVICIOS: tarjetas refinadas, más limpias, mejor jerarquía, iconos más compactos y distribución responsive. Se mantienen los 8 servicios.
 
-IMPORTANTE SOBRE EL AVATAR:
-El código está preparado para usar images/assistant.png con transparencia real.
-La postura exacta de medio cuerpo con brazos cruzados del mockup requiere un nuevo
-recurso gráfico del asistente; CSS no puede cambiar la anatomía ni la postura de una
-imagen. No se ha deformado el avatar existente para simularlo.
+El avatar actual NO fue eliminado del proyecto: sigue en images/assistant.png y continúa reservado para el módulo dedicado del Asistente Virtual. Cuando generemos el avatar definitivo de medio cuerpo con brazos cruzados, se reemplazará ese recurso sin rehacer la arquitectura.
 
-INSTALACIÓN:
-1. Sustituye el index.html de GitHub por este.
-2. En la carpeta images sustituye los archivos por los incluidos en este paquete.
-3. Mantén exactamente los nombres:
-   logo.jpg
-   office-bg.jpg
-   dashboard.jpg
-   assistant.png
-4. Confirma los cambios.
-5. Espera unos segundos y recarga GitHub Pages.
+ARCHIVOS:
+index.html
+images/assistant.png
+images/logo.jpg
+images/dashboard.jpg
+images/office-bg.jpg
+
+INSTALACIÓN EN GITHUB:
+1. Reemplaza el index.html actual por este index.html.
+2. Mantén la carpeta images exactamente como está.
+3. No cambies los nombres de los cuatro archivos de images.
+4. Espera unos segundos y recarga la página con una recarga completa.
 
 NOTA:
-La administración de Recursos que existe actualmente es local al navegador. Para
-publicar contenido para todos los visitantes necesitaremos después un backend/CMS.
+La configuración local y el asistente siguen funcionando como en 05.5.2. El panel local NO es backend seguro; la administración pública real de Recursos se hará en una fase posterior con backend.
