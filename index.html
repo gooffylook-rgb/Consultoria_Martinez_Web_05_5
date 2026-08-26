@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Consultoría Martínez — asesoría contable, financiera, fiscal, jurídica y de capital humano para emprendedores y PYMEs en Cuba.">
 <meta name="theme-color" content="#4d2b86">
-<title>Consultoría Martínez | Al servicio de tus finanzas · 05.5.2 · A/B/C VISUAL POLISH</title>
+<title>Consultoría Martínez | Al servicio de tus finanzas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,10 +32,9 @@ a{color:inherit}
 .site-header{position:fixed;inset:0 0 auto;z-index:1000;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(35,20,55,.08);box-shadow:0 6px 30px rgba(20,10,30,.08);backdrop-filter:blur(18px)}
 .header-inner{min-height:82px;display:flex;align-items:center;gap:28px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content}
-.brand img{width:58px;height:58px;object-fit:contain}
-.brand-copy{display:flex;flex-direction:column;line-height:1}
-.brand-name{font:800 16px/1 "Montserrat",sans-serif;letter-spacing:1.2px;text-transform:uppercase;background:linear-gradient(120deg,var(--purple-800),var(--purple-500));-webkit-background-clip:text;background-clip:text;color:transparent}
-.brand-tag{font-size:8px;letter-spacing:2.3px;text-transform:uppercase;color:#777;margin-top:7px}
+.brand img{width:220px;height:60px;object-fit:contain;object-position:left center}
+.brand-copy{display:none}
+.brand-name,.brand-tag{display:none}
 .nav{margin-left:auto;display:flex;align-items:center;gap:26px}
 .nav a{text-decoration:none;font:700 10px/1 "Montserrat",sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:#393442;padding:31px 0;position:relative}
 .nav a:after{content:"";position:absolute;left:0;right:100%;bottom:22px;height:2px;background:linear-gradient(90deg,var(--purple-700),var(--purple-300));transition:.25s}
@@ -44,13 +43,13 @@ a{color:inherit}
 .menu span{display:block;width:22px;height:2px;background:var(--purple-800);margin:5px auto;border-radius:3px}
 /* HERO */
 .hero{min-height:820px;height:100vh;max-height:980px;position:relative;display:grid;place-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-image:linear-gradient(105deg,rgba(21,10,31,.44) 0%,rgba(45,25,66,.18) 48%,rgba(20,11,29,.10) 100%),url("images/office-bg.jpg");background-size:cover;background-position:center;filter:saturate(1.08);transform:scale(1.015)}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(105deg,rgba(16,7,25,.52) 0%,rgba(37,17,55,.28) 48%,rgba(14,8,20,.18) 100%),url("images/office-bg.jpg");background-size:cover;background-position:center;filter:saturate(1.08);transform:scale(1.015)}
 .hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,#25170e);z-index:1;pointer-events:none}
 .hero-content{position:relative;z-index:3;width:min(920px,calc(100% - 48px));text-align:center;color:#fff;padding:90px 34px 34px;border-radius:28px;background:linear-gradient(90deg,rgba(20,9,30,.58),rgba(20,9,30,.22) 72%,rgba(20,9,30,0));box-shadow:0 20px 60px rgba(0,0,0,.08)}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 11px/1 "Montserrat",sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:#fff;margin-bottom:20px}
 .eyebrow:before,.eyebrow:after{content:"";width:34px;height:1px;background:rgba(255,255,255,.65)}
 .hero h1{font:900 clamp(2.25rem,5vw,4.7rem)/1.02 "Montserrat",sans-serif;text-transform:uppercase;letter-spacing:.4px;text-shadow:0 8px 28px rgba(0,0,0,.34)}
-.hero h1 span{display:block;color:#e5b5ff;text-shadow:0 4px 18px rgba(24,8,36,.82),0 1px 0 rgba(255,255,255,.12)}
+.hero h1 span{display:block;color:#dca0ff;text-shadow:0 5px 22px rgba(22,6,38,.95),0 2px 0 rgba(255,255,255,.18)}
 .hero p{font-size:clamp(1rem,1.7vw,1.25rem);max-width:760px;margin:24px auto 34px;color:rgba(255,255,255,.92)}
 .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;text-decoration:none;border:1px solid transparent;font:800 11px/1 "Montserrat",sans-serif;letter-spacing:1.1px;text-transform:uppercase;transition:.25s;box-shadow:0 12px 35px rgba(0,0,0,.18)}
@@ -73,7 +72,7 @@ a{color:inherit}
 .services{position:relative;padding:100px 0;background:#25170e;overflow:hidden}
 .services:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(37,23,14,.58),rgba(37,23,14,.64)),url("images/office-bg.jpg");background-size:cover;background-position:center;opacity:.95}
 .section-heading{position:relative;z-index:2;text-align:center;color:#fff;margin-bottom:46px}.section-heading .eyebrow{color:#d5afe7}.section-heading h2{font:800 clamp(2rem,4vw,3rem)/1.05 "Montserrat";margin-bottom:13px}.section-heading h2 span{color:#c48ce1}.section-heading p{max-width:700px;margin:auto;color:rgba(255,255,255,.72)}
-.services-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:40px;align-items:start}
+.services-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:34px;align-items:start}
 .services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .service-card{background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.55);border-radius:18px;padding:26px 24px;min-height:210px;box-shadow:0 18px 48px rgba(0,0,0,.22);transition:.28s;position:relative;overflow:hidden}
 .service-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--purple-700),var(--purple-300));transform:scaleX(0);transform-origin:left;transition:.28s}
@@ -82,12 +81,14 @@ a{color:inherit}
 .service-card h3{font:800 1rem/1.2 "Montserrat";margin-bottom:8px}.service-card p{font-size:.83rem;color:var(--muted)}
 .service-card .service-link{display:inline-flex;gap:6px;align-items:center;margin-top:14px;text-decoration:none;color:var(--purple-700);font:800 .72rem/1 "Montserrat";letter-spacing:.8px;text-transform:uppercase}
 /* ASSISTANT */
-.assistant{position:sticky;top:105px;background:#fff;border-radius:24px;overflow:visible;box-shadow:0 30px 78px rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.62)}
-.assistant-head{background:radial-gradient(circle at 50% 28%,rgba(255,255,255,.98) 0%,rgba(248,245,251,.98) 42%,rgba(235,226,244,.98) 100%);padding:23px 18px 0;text-align:center;border-radius:24px 24px 0 0;position:relative;overflow:hidden}
-.assistant-head:after{content:"";position:absolute;left:14%;right:14%;bottom:42px;height:120px;background:radial-gradient(ellipse,rgba(134,87,191,.14),transparent 68%);pointer-events:none}
-.assistant-head h3{position:relative;z-index:3;font:900 1.1rem/1.15 "Montserrat";text-transform:uppercase;color:var(--purple-800);letter-spacing:.85px}.assistant-head h3 span{color:var(--purple-500)}
-.avatar-wrap{width:min(100%,390px);height:365px;margin:4px auto -34px;position:relative;display:flex;justify-content:center;align-items:flex-end;overflow:visible;z-index:2}.avatar-wrap img{height:100%;width:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:normal;filter:drop-shadow(0 18px 20px rgba(32,16,48,.25))}.question{position:absolute;right:18px;top:24px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--purple-800);font:900 1.35rem "Montserrat";box-shadow:0 8px 22px rgba(0,0,0,.17);border:2px solid var(--purple-600);z-index:4}
-.chat{position:relative;z-index:3;background:#fff;border-top:1px solid #e7e0eb;border-radius:22px 22px 0 0;padding:24px 18px 18px;box-shadow:0 -10px 28px rgba(50,31,70,.07)}.chat-window{max-height:245px;overflow:auto;display:flex;flex-direction:column;gap:9px;padding-right:2px}.bubble{max-width:90%;padding:10px 12px;border-radius:13px;font-size:.78rem;white-space:pre-line}.bubble.bot{align-self:flex-start;background:#f5f2f8;color:#322a3b;border-top-left-radius:4px}.bubble.user{align-self:flex-end;background:var(--purple-700);color:#fff;border-top-right-radius:4px}
+.assistant{position:sticky;top:105px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 32px 85px rgba(0,0,0,.40);border:1px solid rgba(255,255,255,.65)}
+.assistant-head{background:radial-gradient(circle at 50% 15%,rgba(151,91,220,.28),transparent 45%),linear-gradient(145deg,#faf8fd 0%,#eee6f7 100%);padding:22px 18px 0;text-align:center;border-bottom:1px solid #e5dfe9}
+.assistant-head h3{font:900 1.05rem/1.15 "Montserrat";text-transform:uppercase;color:var(--purple-800);letter-spacing:.8px}.assistant-head h3 span{color:var(--purple-500)}
+.avatar-wrap{width:100%;height:335px;margin:8px auto 0;position:relative;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}.avatar-wrap img{height:100%;width:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:normal;filter:drop-shadow(0 18px 24px rgba(32,16,48,.24))}
+.avatar-wrap:after{content:"";position:absolute;left:14%;right:14%;bottom:0;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(67,40,111,.22),transparent 70%);pointer-events:none}
+.question{position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--purple-800);font:900 1.25rem "Montserrat";box-shadow:0 8px 22px rgba(0,0,0,.16);border:2px solid var(--purple-600);z-index:2}
+.chat{padding:17px}.chat-window{max-height:245px;overflow:auto;display:flex;flex-direction:column;gap:9px;padding-right:2px}.bubble{max-width:90%;padding:10px 12px;border-radius:13px;font-size:.78rem;white-space:pre-line}.bubble.bot{align-self:flex-start;background:#f5f2f8;color:#322a3b;border-top-left-radius:4px}.bubble.user{align-self:flex-end;background:var(--purple-700);color:#fff;border-top-right-radius:4px}
+.chat-action{align-self:flex-start;max-width:95%}.chat-action a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:linear-gradient(135deg,var(--purple-700),var(--purple-500));color:#fff;border-radius:999px;padding:10px 14px;font:800 .68rem "Montserrat";letter-spacing:.3px;box-shadow:0 8px 18px rgba(91,54,160,.22)}
 .quick{display:grid;gap:8px;margin:13px 0}.quick button{background:#fff;color:var(--purple-700);border:1px solid #cdbbdd;border-radius:999px;padding:9px 10px;font:700 .72rem "Montserrat";transition:.2s}.quick button:hover{background:var(--purple-700);color:#fff}
 .chat-form{display:flex;gap:8px;border-top:1px solid #eee;padding-top:13px}.chat-form input{min-width:0;flex:1;border:1px solid #ddd7e3;border-radius:999px;padding:10px 13px;outline:0;font-size:.78rem}.chat-form input:focus{border-color:var(--purple-600);box-shadow:0 0 0 3px rgba(107,63,160,.09)}.send{width:42px;height:42px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--purple-700),var(--purple-500));color:#fff;display:grid;place-items:center}.send svg{width:18px;height:18px;fill:currentColor}
 .wa{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:12px;text-decoration:none;color:#fff;background:var(--green);border-radius:999px;padding:12px 14px;font:800 .72rem "Montserrat";letter-spacing:.5px;box-shadow:0 10px 22px rgba(37,211,102,.25)}.wa svg{width:21px;height:21px;fill:currentColor}
@@ -98,621 +99,15 @@ a{color:inherit}
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.news-card{background:#fff;border:1px solid #e6e1e9;border-radius:18px;overflow:hidden;box-shadow:0 12px 35px rgba(37,21,53,.08);display:flex;flex-direction:column}.news-art{height:150px;background:linear-gradient(135deg,var(--purple-900),var(--purple-500));display:grid;place-items:center;color:#fff;position:relative}.news-art svg{width:58px;height:58px;fill:none;stroke:currentColor;stroke-width:1.5}.news-cat{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.92);color:var(--purple-800);padding:5px 9px;border-radius:999px;font:800 .62rem "Montserrat";text-transform:uppercase}.news-body{padding:20px;display:flex;flex-direction:column;flex:1}.news-date{font-size:.7rem;color:#8a8490;margin-bottom:8px}.news-title{font:800 1rem/1.3 "Montserrat";margin-bottom:8px}.news-excerpt{font-size:.82rem;color:var(--muted);margin-bottom:18px;flex:1}.news-link{color:var(--purple-700);font:800 .72rem "Montserrat";text-decoration:none;text-transform:uppercase;letter-spacing:.7px}
 /* CONTACT / FOOTER */
 .contact{padding:92px 0;background:var(--purple-950);color:#fff}.contact-card{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}.contact h2{font:800 clamp(2rem,4vw,3rem)/1.05 "Montserrat";margin-bottom:14px}.contact h2 span{color:#c58de1}.contact p{color:rgba(255,255,255,.72);max-width:650px}.contact-actions{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap}
-footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:36px}.footer-brand img{width:74px;margin-bottom:12px}.footer-brand p,.footer-col a,.footer-contact{color:rgba(255,255,255,.58);font-size:.82rem}.footer-col h4{font:800 .78rem "Montserrat";text-transform:uppercase;letter-spacing:1px;margin-bottom:15px;color:#fff}.footer-col ul{list-style:none;display:grid;gap:9px}.footer-col a{text-decoration:none}.footer-col a:hover{color:#c58de1}.footer-contact{display:flex;gap:9px;margin-bottom:10px;align-items:flex-start}.footer-bottom{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:rgba(255,255,255,.42);font-size:.72rem}
+footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:36px}.footer-brand img{width:270px;height:auto;max-height:90px;object-fit:contain;object-position:left center;margin-bottom:16px}.footer-brand p,.footer-col a,.footer-contact{color:rgba(255,255,255,.58);font-size:.82rem}.footer-col h4{font:800 .78rem "Montserrat";text-transform:uppercase;letter-spacing:1px;margin-bottom:15px;color:#fff}.footer-col ul{list-style:none;display:grid;gap:9px}.footer-col a{text-decoration:none}.footer-col a:hover{color:#c58de1}.footer-contact{display:flex;gap:9px;margin-bottom:10px;align-items:flex-start}.footer-bottom{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:rgba(255,255,255,.42);font-size:.72rem}
 /* ADMIN */
 .admin-overlay{position:fixed;inset:0;z-index:10000;background:rgba(10,6,15,.76);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:18px}.admin-overlay.open{display:flex}.admin-panel{width:min(920px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,.5)}.admin-head{position:sticky;top:0;z-index:2;padding:18px 22px;background:linear-gradient(135deg,var(--purple-900),var(--purple-600));color:#fff;display:flex;align-items:center;justify-content:space-between}.admin-head h3{font:800 1rem "Montserrat"}.close{width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:1.2rem}.admin-body{padding:22px}.admin-note{background:#fff8e7;border:1px solid #f1d58a;color:#6e5617;padding:12px 14px;border-radius:10px;font-size:.8rem;margin-bottom:18px}.admin-tabs{display:flex;gap:6px;border-bottom:1px solid #e5e0e8;margin-bottom:20px;overflow:auto}.admin-tab{border:0;background:none;padding:11px 14px;color:#777;font:700 .75rem "Montserrat";white-space:nowrap}.admin-tab.active{color:var(--purple-700);border-bottom:2px solid var(--purple-700)}.admin-pane{display:none}.admin-pane.active{display:block}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font:700 .72rem "Montserrat";color:#4d4653}.field input,.field textarea,.field select{width:100%;padding:10px 12px;border:1px solid #d9d3dd;border-radius:9px;outline:0}.field textarea{min-height:100px;resize:vertical}.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.admin-btn{border:0;border-radius:9px;padding:10px 15px;background:var(--purple-700);color:#fff;font:800 .72rem "Montserrat"}.admin-btn.alt{background:#fff;color:var(--purple-700);border:1px solid #cfc5d8}.admin-btn.danger{background:#b92b3b}.list{display:grid;gap:9px;margin-top:15px}.list-item{border:1px solid #e7e1e9;border-radius:10px;padding:12px;display:flex;justify-content:space-between;gap:12px;align-items:center}.list-item strong{font-size:.8rem}.list-item small{display:block;color:#888;margin-top:3px}.status{display:none;margin-top:10px;padding:9px;border-radius:8px;font-size:.78rem}.status.show{display:block}.status.ok{background:#e7f7ed;color:#146b36}.status.err{background:#fdebed;color:#8d2330}
 /* RESPONSIVE */
-@media(max-width:1100px){.nav{gap:16px}.services-layout{grid-template-columns:1fr}.assistant{position:relative;top:auto;max-width:560px;margin:18px auto 0}.product-inner{grid-template-columns:1fr}.device-stage{min-height:390px}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:800px){.container{width:min(calc(100% - 32px),var(--max))}.header-inner{min-height:72px}.brand img{width:50px;height:50px}.brand-name{font-size:14px}.brand-tag{font-size:7px;letter-spacing:1.6px}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px 20px 20px;box-shadow:0 20px 30px rgba(0,0,0,.10);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:14px 4px;border-bottom:1px solid #eee}.nav a:after{bottom:5px}.menu{display:block}.hero{min-height:720px}.hero-content{padding-top:70px;padding-left:18px;padding-right:18px;background:linear-gradient(90deg,rgba(20,9,30,.64),rgba(20,9,30,.28))}.hero-scroll{display:none}.tablet{width:180px;right:-3px}.services-grid,.news-grid{grid-template-columns:1fr}.product{padding:76px 0}.device-stage{min-height:290px}.laptop{width:100%}.contact-card{grid-template-columns:1fr}.contact-actions{justify-content:flex-start}.footer-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
-@media(max-width:520px){.container{width:min(calc(100% - 24px),var(--max))}.brand-copy{display:none}.hero{min-height:690px}.hero h1{font-size:2.15rem}.hero p{font-size:.94rem}.cta-row .btn{width:100%;max-width:330px}.product-inner{gap:34px}.device-stage{min-height:230px}.tablet{width:118px}.services,.resources,.contact{padding:72px 0}.assistant-head h3{font-size:.95rem}.avatar-wrap{height:225px;width:230px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.admin-body{padding:16px}}
-@media(max-width:520px){.assistant{border-radius:20px}.assistant-head{border-radius:20px 20px 0 0;padding-top:20px}.avatar-wrap{height:315px;width:min(100%,350px);margin-bottom:-28px}.question{right:10px;top:18px;width:38px;height:38px}.chat{border-radius:18px 18px 0 0;padding:22px 14px 16px}}
+@media(max-width:1100px){.nav{gap:16px}.services-layout{grid-template-columns:1fr}.assistant{position:relative;top:auto;max-width:500px;margin:auto}.product-inner{grid-template-columns:1fr}.device-stage{min-height:390px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){.container{width:min(calc(100% - 32px),var(--max))}.header-inner{min-height:72px}.brand img{width:205px;height:56px}.brand-name{font-size:14px}.brand-tag{font-size:7px;letter-spacing:1.6px}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px 20px 20px;box-shadow:0 20px 30px rgba(0,0,0,.10);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:14px 4px;border-bottom:1px solid #eee}.nav a:after{bottom:5px}.menu{display:block}.hero{min-height:720px}.hero-content{padding-top:70px;padding-left:18px;padding-right:18px;background:linear-gradient(90deg,rgba(20,9,30,.64),rgba(20,9,30,.28))}.hero-scroll{display:none}.tablet{width:180px;right:-3px}.services-grid,.news-grid{grid-template-columns:1fr}.product{padding:76px 0}.device-stage{min-height:290px}.laptop{width:100%}.contact-card{grid-template-columns:1fr}.contact-actions{justify-content:flex-start}.footer-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:520px){.container{width:min(calc(100% - 24px),var(--max))}.brand-copy{display:none}.hero{min-height:690px}.hero h1{font-size:2.15rem}.hero p{font-size:.94rem}.cta-row .btn{width:100%;max-width:330px}.product-inner{gap:34px}.device-stage{min-height:230px}.tablet{width:118px}.services,.resources,.contact{padding:72px 0}.assistant-head h3{font-size:.95rem}.avatar-wrap{height:300px;width:100%}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.admin-body{padding:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.service-card,.btn{transition:none}}
 </style>
-
-<style id="vision-10000-overrides">
-/* =========================================================
-   CONSULTORÍA MARTÍNEZ 05.5.2 · A/B/C VISUAL POLISH
-   Visual layer inspired by the approved reference mockup.
-   ========================================================= */
-:root{
-  --vm-purple:#4d19d1;
-  --vm-violet:#7a2ff2;
-  --vm-blue:#173bff;
-  --vm-navy:#081332;
-  --vm-white:#ffffff;
-  --vm-soft:#f5f6ff;
-  --vm-green:#20d66b;
-}
-body{background:#081332}
-.site-header{
-  background:rgba(255,255,255,.93);
-  box-shadow:0 8px 34px rgba(8,19,50,.12);
-}
-.header-inner{min-height:78px}
-.brand img{width:60px;height:60px}
-.brand-name{font-size:15px}
-.nav{gap:28px}
-.nav a{font-size:10px}
-.hero{
-  min-height:720px;
-  height:min(760px,92vh);
-  max-height:820px;
-  align-items:stretch;
-  padding-top:78px;
-}
-.hero-bg{
-  background-image:
-    linear-gradient(90deg,rgba(8,19,50,.64) 0%,rgba(8,19,50,.24) 45%,rgba(8,19,50,.04) 100%),
-    url("images/office-bg.jpg");
-  background-position:center;
-  filter:saturate(1.18) contrast(1.02);
-}
-.hero:after{
-  height:130px;
-  background:linear-gradient(transparent,rgba(12,9,22,.72));
-}
-.hero-content{
-  width:min(1420px,calc(100% - 48px));
-  text-align:left;
-  align-self:center;
-  margin:0 auto;
-  padding:80px 48% 60px 0;
-  border-radius:0;
-  background:none;
-  box-shadow:none;
-}
-.eyebrow{
-  background:linear-gradient(135deg,var(--vm-purple),var(--vm-violet));
-  border-radius:999px;
-  padding:9px 16px;
-  width:max-content;
-  max-width:100%;
-  letter-spacing:1.2px;
-}
-.eyebrow:before,.eyebrow:after{display:none}
-.hero h1{
-  max-width:780px;
-  font-size:clamp(2.65rem,5.4vw,5rem);
-  text-shadow:0 5px 24px rgba(0,0,0,.55);
-}
-.hero h1 span{
-  color:#7f4cff;
-  text-shadow:0 3px 16px rgba(255,255,255,.35),0 4px 24px rgba(0,0,0,.72);
-}
-.hero p{
-  max-width:650px;
-  margin:20px 0 20px;
-  color:#fff;
-  text-shadow:0 2px 10px rgba(0,0,0,.5);
-}
-.hero-benefits{
-  display:flex;
-  gap:22px;
-  flex-wrap:wrap;
-  margin:12px 0 24px;
-  color:#fff;
-  font:700 12px/1.25 "Montserrat",sans-serif;
-  text-shadow:0 2px 8px rgba(0,0,0,.55);
-}
-.hero-benefits span{display:flex;align-items:center;gap:8px}
-.hero-benefits b{
-  display:grid;place-items:center;width:28px;height:28px;border-radius:50%;
-  background:linear-gradient(135deg,#5a20e8,#8b55ff);box-shadow:0 6px 18px rgba(62,19,167,.35)
-}
-.hero-assistant{
-  position:absolute;
-  z-index:4;
-  right:max(3%,calc((100vw - 1420px)/2));
-  bottom:0;
-  width:min(470px,36vw);
-  height:620px;
-  pointer-events:none;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-}
-.hero-assistant img{
-  height:100%;
-  width:100%;
-  object-fit:contain;
-  object-position:center bottom;
-  filter:drop-shadow(0 26px 38px rgba(0,0,0,.34));
-}
-.hero-question{
-  position:absolute;
-  z-index:5;
-  left:7%;
-  top:14%;
-  width:62px;height:62px;border-radius:50%;
-  display:grid;place-items:center;
-  color:#fff;font:900 30px "Montserrat";
-  background:linear-gradient(145deg,#5b20df,#9d6aff);
-  border:3px solid rgba(255,255,255,.88);
-  box-shadow:0 12px 32px rgba(50,12,120,.42);
-}
-.cta-row{justify-content:flex-start}
-.btn-primary{background:linear-gradient(135deg,var(--vm-purple),var(--vm-violet))}
-.btn-primary:hover{box-shadow:0 18px 45px rgba(75,25,210,.48)}
-.product{
-  order:3;
-  padding:76px 0;
-  background:#f4f6ff;
-  color:#14204c;
-}
-.product:before{
-  background:
-    linear-gradient(135deg,rgba(244,246,255,.92),rgba(226,231,255,.78)),
-    url("images/office-bg.jpg");
-  opacity:1;
-  mix-blend-mode:normal;
-}
-.product-inner{
-  grid-template-columns:1fr 1.1fr;
-  gap:50px;
-}
-.product-copy{color:#14204c}
-.product-copy .eyebrow{color:#fff}
-.product-copy h2{font-size:clamp(2rem,4vw,3.2rem)}
-.product-copy h2 span{color:var(--vm-purple)}
-.product-copy p{color:#35436c}
-.feature-list li{color:#28355f}
-.check{background:#eee8ff;color:var(--vm-purple)}
-.services{
-  order:2;
-  padding:68px 0 78px;
-  background:#17143a;
-}
-.services:before{
-  background:
-    linear-gradient(rgba(11,10,35,.70),rgba(17,12,42,.74)),
-    url("images/office-bg.jpg");
-  opacity:1;
-}
-.section-heading{text-align:left;margin-bottom:30px}
-.section-heading h2{font-size:clamp(2rem,4vw,3.1rem)}
-.services-layout{
-  grid-template-columns:minmax(0,1fr) 390px;
-  gap:28px;
-}
-.services-grid{
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
-}
-.service-card{
-  min-height:166px;
-  padding:20px 18px;
-  border-radius:16px;
-}
-.service-card h3{font-size:1rem}
-.service-card p{font-size:.78rem}
-.icon-box{
-  width:46px;height:46px;border-radius:13px;
-  background:#f0eaff;color:var(--vm-purple);
-}
-.service-link{font-size:.68rem}
-.assistant{
-  position:relative;
-  top:auto;
-  width:100%;
-  max-width:none;
-  border-radius:24px;
-  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(241,237,255,.94));
-  box-shadow:0 28px 70px rgba(0,0,0,.34);
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.9);
-}
-.assistant-head{
-  min-height:390px;
-  padding:22px 20px 0;
-  background:
-    radial-gradient(circle at 70% 35%,rgba(143,91,255,.25),transparent 42%),
-    linear-gradient(180deg,#ffffff 0%,#eee8ff 100%);
-}
-.assistant-head h3{
-  position:relative;
-  z-index:3;
-  font-size:1.35rem;
-  line-height:1.08;
-  color:#182253;
-}
-.assistant-head h3 span{color:var(--vm-purple)}
-.avatar-wrap{
-  position:absolute;
-  left:50%;
-  bottom:0;
-  transform:translateX(-50%);
-  width:330px;
-  height:350px;
-  margin:0;
-  background:transparent;
-}
-.avatar-wrap img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center bottom;
-  filter:drop-shadow(0 18px 30px rgba(34,14,79,.28));
-}
-.question{
-  width:52px;height:52px;right:10px;top:20px;
-  font-size:24px;background:linear-gradient(145deg,#5a20e8,#9162ff);
-  border:3px solid #fff;box-shadow:0 10px 28px rgba(55,18,130,.35);
-}
-.chat{
-  position:relative;
-  z-index:3;
-  margin:0;
-  border-radius:22px 22px 0 0;
-  padding:20px 16px 16px;
-  background:rgba(255,255,255,.96);
-  box-shadow:0 -12px 34px rgba(31,15,73,.12);
-}
-.chat-window{min-height:68px;max-height:150px}
-.bubble.bot{background:#202d83;color:#fff}
-.quick button{
-  border-color:#ded7ef;
-  background:#fff;
-  box-shadow:0 4px 12px rgba(38,17,79,.06);
-}
-.wa{background:linear-gradient(135deg,#1bd36b,#0aae52);font-size:.72rem}
-.resources{
-  order:4;
-  background:#f8f9ff;
-  padding:58px 0 66px;
-}
-.resources .section-heading{color:#15204d}
-.resources .section-heading p{color:#68718c}
-.tabs{justify-content:flex-start}
-.tab.active{background:var(--vm-purple)}
-.news-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.news-card{
-  border-radius:16px;
-  box-shadow:0 12px 34px rgba(28,32,76,.10);
-  overflow:hidden;
-}
-.news-art{min-height:130px}
-.contact{
-  order:5;
-  background:#071232;
-  padding:62px 0;
-}
-.contact-card{
-  border-radius:28px;
-  background:linear-gradient(120deg,#5d18dc,#163eff);
-  box-shadow:0 22px 65px rgba(19,15,69,.34);
-}
-.trust-banner{
-  background:linear-gradient(110deg,#5d18dc,#173cff);
-  color:#fff;
-  padding:18px 0;
-}
-.trust-inner{display:flex;align-items:center;gap:18px}
-.trust-icon{font-size:2.5rem}
-.trust-inner strong{display:block;font:800 1.35rem "Montserrat"}
-.trust-inner span{display:block;opacity:.86}
-.trust-wa{
-  margin-left:auto;
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:48px;padding:0 24px;border-radius:999px;
-  background:#16d568;color:#fff;text-decoration:none;
-  font:800 .72rem "Montserrat";
-  box-shadow:0 10px 26px rgba(0,0,0,.18);
-}
-footer{background:#06102d}
-@media(min-width:1101px){
-  main{display:flex;flex-direction:column}
-  .hero{order:1}
-  .services{order:2}
-  .product{order:3}
-  .resources{order:4}
-  .contact{order:5}
-}
-@media(max-width:1100px){
-  .hero{height:auto;min-height:820px}
-  .hero-content{padding:110px 44% 70px 0}
-  .hero-assistant{width:40vw;height:540px}
-  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .services-layout{grid-template-columns:1fr 430px}
-}
-@media(max-width:800px){
-  .hero{min-height:900px}
-  .hero-content{
-    width:min(calc(100% - 28px),var(--max));
-    padding:92px 18px 350px;
-    text-align:center;
-  }
-  .hero-content .eyebrow{margin-left:auto;margin-right:auto}
-  .hero h1{font-size:clamp(2.15rem,9vw,3.6rem)}
-  .hero p{margin-left:auto;margin-right:auto}
-  .hero-benefits{justify-content:center}
-  .cta-row{justify-content:center}
-  .hero-assistant{
-    width:330px;height:380px;
-    right:50%;transform:translateX(50%);
-    bottom:0;
-  }
-  .hero-question{left:4%;top:5%}
-  .services-layout{grid-template-columns:1fr}
-  .assistant{max-width:560px;margin:0 auto}
-  .product-inner{grid-template-columns:1fr}
-  .news-grid{grid-template-columns:1fr}
-  .trust-inner{flex-wrap:wrap}
-  .trust-wa{margin-left:0}
-}
-@media(max-width:520px){
-  .hero{min-height:850px}
-  .hero-content{padding-bottom:310px}
-  .hero-assistant{width:300px;height:340px}
-  .hero-question{width:46px;height:46px;font-size:22px}
-  .services-grid{grid-template-columns:1fr}
-  .assistant-head{min-height:360px}
-  .avatar-wrap{width:290px;height:320px}
-  .trust-inner strong{font-size:1.05rem}
-  .trust-inner span{font-size:.82rem}
-}
-</style>
-
-
-<style id="cm-0552-abc-visual-polish">
-/* =========================================================
-   CONSULTORÍA MARTÍNEZ 05.5.2 A/B/C — VISUAL POLISH
-   A: Hero corrected / avatar removed from Hero
-   B: Office image presence + headline contrast
-   C: Services cards premium refinement
-   ========================================================= */
-
-/* ---------- A/B: HERO ---------- */
-.hero{
-  min-height:760px;
-  height:min(760px,calc(100vh - 78px));
-  max-height:none;
-  isolation:isolate;
-}
-.hero-bg{
-  background-image:
-    linear-gradient(90deg,rgba(8,19,50,.40) 0%,rgba(8,19,50,.16) 52%,rgba(8,19,50,.10) 100%),
-    url("images/office-bg.jpg");
-  background-position:center 47%;
-  background-size:cover;
-  filter:saturate(1.24) contrast(1.05) brightness(.97);
-  transform:scale(1.02);
-}
-.hero-bg:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(ellipse at 42% 42%,rgba(5,10,30,.05) 0%,rgba(5,10,30,.18) 56%,rgba(5,10,30,.34) 100%),
-    linear-gradient(180deg,rgba(8,19,50,.06) 0%,rgba(8,19,50,.04) 60%,rgba(8,19,50,.42) 100%);
-  pointer-events:none;
-}
-.hero-content{
-  width:min(1180px,calc(100% - 48px));
-  max-width:1180px;
-  padding:70px 48% 58px 0;
-}
-.hero h1{
-  max-width:760px;
-  font-size:clamp(2.55rem,5.1vw,4.8rem);
-  line-height:.98;
-  letter-spacing:-.7px;
-  text-shadow:0 5px 20px rgba(0,0,0,.62),0 12px 34px rgba(0,0,0,.28);
-}
-.hero h1 span{
-  display:inline;
-  color:#fff;
-  text-shadow:0 3px 12px rgba(18,5,50,.55);
-  background:linear-gradient(100deg,rgba(77,25,209,.98),rgba(122,47,242,.93));
-  padding:.07em .16em .10em;
-  border-radius:.14em;
-  -webkit-box-decoration-break:clone;
-  box-decoration-break:clone;
-  box-shadow:0 10px 30px rgba(42,11,100,.22);
-}
-.hero p{
-  max-width:650px;
-  margin:24px 0 22px;
-  font-size:clamp(1rem,1.55vw,1.18rem);
-  color:rgba(255,255,255,.96);
-  text-shadow:0 2px 12px rgba(0,0,0,.66);
-}
-.hero-benefits{
-  gap:12px 22px;
-  margin:12px 0 28px;
-}
-.hero-benefits span{
-  min-height:30px;
-}
-.hero .btn-primary{
-  min-height:56px;
-  padding:0 30px;
-  box-shadow:0 14px 35px rgba(48,12,129,.35);
-}
-.hero .btn-light{
-  min-height:56px;
-  background:rgba(10,16,40,.28);
-  border-color:rgba(255,255,255,.72);
-  box-shadow:0 12px 30px rgba(0,0,0,.14);
-}
-/* The old Hero avatar is intentionally disabled. The definitive half-body avatar
-   will live only inside the dedicated assistant module. */
-.hero-assistant{display:none!important}
-
-/* ---------- C: SERVICES ---------- */
-.services{
-  padding:82px 0 92px;
-  background:#121334;
-}
-.services:before{
-  background:
-    linear-gradient(135deg,rgba(7,10,35,.76),rgba(28,12,56,.72)),
-    url("images/office-bg.jpg");
-  background-position:center 54%;
-  background-size:cover;
-  opacity:1;
-}
-.section-heading{
-  max-width:920px;
-  margin:0 auto 38px;
-}
-.section-heading .eyebrow{
-  margin-bottom:15px;
-}
-.section-heading h2{
-  font-size:clamp(2.05rem,4vw,3.35rem);
-  letter-spacing:-.6px;
-}
-.section-heading p{
-  max-width:760px;
-  margin-top:14px;
-  font-size:.98rem;
-}
-.services-layout{
-  grid-template-columns:minmax(0,1fr) 390px;
-  gap:28px;
-  align-items:stretch;
-}
-.services-grid{
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;
-}
-.service-card{
-  min-height:190px;
-  padding:22px 20px 20px;
-  border-radius:18px;
-  background:rgba(255,255,255,.975);
-  border:1px solid rgba(255,255,255,.78);
-  box-shadow:0 16px 40px rgba(0,0,0,.22);
-}
-.service-card:after{
-  content:"";
-  position:absolute;
-  inset:auto 0 0;
-  height:3px;
-  background:linear-gradient(90deg,#4d19d1,#9d68ff);
-  opacity:.55;
-}
-.service-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 24px 52px rgba(0,0,0,.28);
-}
-.icon-box{
-  width:50px;
-  height:50px;
-  border-radius:14px;
-  margin-bottom:15px;
-  background:linear-gradient(145deg,#efe8ff,#faf8ff);
-  box-shadow:inset 0 0 0 1px rgba(77,25,209,.08);
-}
-.icon-box svg{width:28px;height:28px}
-.service-card h3{
-  font-size:.98rem;
-  line-height:1.22;
-  margin-bottom:7px;
-}
-.service-card p{
-  font-size:.78rem;
-  line-height:1.5;
-  color:#65647a;
-}
-.service-card .service-link{
-  margin-top:13px;
-  font-size:.67rem;
-}
-
-/* Dedicated assistant card: visual space is reserved for the future definitive
-   half-body / arms-crossed transparent avatar without touching the Hero. */
-.assistant{
-  align-self:stretch;
-  min-height:100%;
-  border-radius:24px;
-  box-shadow:0 26px 68px rgba(0,0,0,.34);
-}
-.assistant-head{
-  min-height:360px;
-  padding:24px 20px 0;
-}
-.avatar-wrap{
-  width:330px;
-  height:310px;
-  bottom:0;
-}
-.question{
-  width:50px;
-  height:50px;
-  right:8px;
-  top:22px;
-}
-
-/* ---------- MOBILE ---------- */
-@media(max-width:1100px){
-  .hero{height:760px;min-height:760px}
-  .hero-content{padding-right:42%;}
-  .services-layout{grid-template-columns:1fr 430px}
-}
-@media(max-width:800px){
-  .hero{
-    min-height:760px;
-    height:760px;
-    padding-top:72px;
-  }
-  .hero-bg{
-    background-image:
-      linear-gradient(180deg,rgba(8,19,50,.18) 0%,rgba(8,19,50,.20) 42%,rgba(8,19,50,.55) 100%),
-      url("images/office-bg.jpg");
-    background-position:center 47%;
-    filter:saturate(1.28) contrast(1.05) brightness(.96);
-  }
-  .hero-content{
-    width:min(calc(100% - 28px),760px);
-    padding:74px 8px 58px;
-    text-align:center;
-    align-self:center;
-  }
-  .hero-content .eyebrow{margin-left:auto;margin-right:auto}
-  .hero h1{
-    max-width:700px;
-    margin:0 auto;
-    font-size:clamp(2.15rem,8.8vw,3.55rem);
-    line-height:1.00;
-  }
-  .hero h1 span{padding:.08em .14em .10em}
-  .hero p{
-    max-width:620px;
-    margin:22px auto 20px;
-    font-size:1rem;
-  }
-  .hero-benefits{justify-content:center;gap:10px 18px;margin-bottom:25px}
-  .cta-row{justify-content:center}
-  .hero .btn{width:100%;max-width:340px}
-  .services{padding:70px 0 78px}
-  .section-heading{text-align:center;margin-bottom:28px}
-  .services-layout{grid-template-columns:1fr;gap:24px}
-  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .assistant{max-width:620px;margin:0 auto}
-}
-@media(max-width:520px){
-  .hero{
-    min-height:735px;
-    height:735px;
-  }
-  .hero-content{padding:64px 4px 50px}
-  .hero h1{font-size:clamp(2rem,9.2vw,2.8rem);letter-spacing:-.45px}
-  .hero p{font-size:.93rem;line-height:1.55}
-  .hero-benefits{font-size:11px;gap:8px 14px}
-  .hero-benefits b{width:26px;height:26px}
-  .hero .btn{min-height:52px;font-size:10px}
-  .services{padding:62px 0 70px}
-  .section-heading h2{font-size:2rem}
-  .section-heading p{font-size:.88rem}
-  .services-grid{grid-template-columns:1fr;gap:12px}
-  .service-card{min-height:0;padding:20px 18px}
-  .assistant-head{min-height:350px}
-  .avatar-wrap{width:290px;height:305px}
-}
-@media(prefers-reduced-motion:reduce){.service-card,.btn{transition:none!important}}
-</style>
-
 </head>
 <body>
 <a class="skip" href="#inicio">Saltar al contenido</a>
@@ -720,8 +115,7 @@ footer{background:#06102d}
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a class="brand" href="#inicio" aria-label="Consultoría Martínez, inicio">
-      <img src="images/logo.jpg" alt="Logotipo de Consultoría Martínez" id="headerLogo">
-      <span class="brand-copy"><span class="brand-name">Consultoría Martínez</span><span class="brand-tag">Al servicio de tus finanzas</span></span>
+      <img src="images/logo-header.png" alt="Logotipo de Consultoría Martínez" id="headerLogo">
     </a>
     <nav class="nav" id="mainNav" aria-label="Navegación principal">
       <a class="active" href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#finza">Finza.M</a><a href="#recursos">Recursos</a><a href="#contacto">Contacto</a>
@@ -733,25 +127,16 @@ footer{background:#06102d}
 <main>
 <section class="hero" id="inicio">
   <div class="hero-bg" aria-hidden="true"></div>
-  
-
-<div class="hero-content">
+  <div class="hero-content">
     <div class="eyebrow">Consultoría especializada para Cuba</div>
     <h1>Potencia tu PYME en Cuba <span>con asesoría de excelencia.</span></h1>
     <p>Contabilidad, finanzas, fiscalidad, capital humano y asesoría jurídica, integrados con la visión tecnológica de Finza.M.</p>
-    
-    <div class="hero-benefits" aria-label="Beneficios">
-      <span><b>✓</b> Resultados reales</span>
-      <span><b>✦</b> Procesos optimizados</span>
-      <span><b>✚</b> Acompañamiento personalizado</span>
-    </div>
-
     <div class="cta-row"><a class="btn btn-primary" href="#contacto">Solicita tu consulta gratuita</a><a class="btn btn-light" href="#finza">Conoce Finza.M</a></div>
   </div>
   <a class="hero-scroll" href="#servicios">Explorar</a>
 </section>
 
-<section class="product" id="finza" data-original-order="product">
+<section class="product" id="finza">
   <div class="container product-inner">
     <div class="product-copy">
       <div class="eyebrow">Tecnología aplicada a tus finanzas</div>
@@ -761,11 +146,8 @@ footer{background:#06102d}
         <li><span class="check">✓</span><span>Gestión contable y financiera orientada a la realidad de las PYMEs cubanas.</span></li>
         <li><span class="check">✓</span><span>Reportes y visualización para entender resultados, liquidez y evolución.</span></li>
         <li><span class="check">✓</span><span>Arquitectura preparada para crecer por módulos según las necesidades del usuario.</span></li>
-        <li><span class="check">✓</span><span>Control de inventarios y operaciones.</span></li>
-        <li><span class="check">✓</span><span>Facturación, reportes y multiusuario.</span></li>
-
       </ul>
-      <a class="btn btn-primary" href="#contacto">Quiero conocer Finza.M</a>
+      <div class="cta-row" style="justify-content:flex-start"><a class="btn btn-primary" href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">Probar Finza.M · DEMO 72 h</a><a class="btn btn-light" href="#asistente">Preguntar al asistente</a></div>
     </div>
     <div class="device-stage" aria-label="Vista de Finza.M en dispositivos">
       <div class="laptop"><img src="images/dashboard.jpg" id="deviceLaptopImg" alt="Panel de control de Finza.M en una laptop" loading="lazy"></div>
@@ -774,7 +156,7 @@ footer{background:#06102d}
   </div>
 </section>
 
-<section class="services" id="servicios" data-original-order="services">
+<section class="services" id="servicios">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Soluciones profesionales</div>
@@ -796,16 +178,17 @@ footer{background:#06102d}
       <aside class="assistant" id="asistente" aria-label="Asistente virtual Martínez">
         <div class="assistant-head">
           <h3>Tu Asistente <span>Virtual Martínez</span></h3>
-          <div class="avatar-wrap"><img src="images/assistant.png" id="chatAvatarImg" alt="Asistente virtual Martínez" loading="lazy"><div class="question">?</div></div>
+          <div class="avatar-wrap"><img src="images/avatar-definitivo.png" id="chatAvatarImg" alt="Asistente virtual Martínez" loading="lazy"><div class="question">?</div></div>
         </div>
         <div class="chat">
           <div class="chat-window" id="chatWindow" aria-live="polite">
-            <div class="bubble bot">Hola, soy el asistente de Consultoría Martínez. ¿En qué puedo ayudarte?</div>
+            <div class="bubble bot">Hola, soy el asistente virtual de Consultoría Martínez. Es un gusto atenderte. ¿Qué necesitas resolver hoy?</div>
           </div>
           <div class="quick" id="quickOptions">
-            <button type="button" data-msg="Info de Finza.M">Info de Finza.M</button>
-            <button type="button" data-msg="Solicitud de Teneduría">Solicitud de Teneduría</button>
-            <button type="button" data-msg="Ayuda Fiscal">Ayuda Fiscal</button>
+            <button type="button" data-msg="Conocer Finza.M">Conocer Finza.M</button>
+            <button type="button" data-msg="Consultar un servicio">Consultar un servicio</button>
+            <button type="button" data-msg="Ayuda fiscal">Ayuda fiscal</button>
+            <button type="button" data-msg="Hablar con un asesor">Hablar con un asesor</button>
           </div>
           <form class="chat-form" id="chatForm"><input id="chatInput" type="text" maxlength="240" autocomplete="off" placeholder="Escribe tu mensaje..." aria-label="Mensaje para el asistente"><button class="send" type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3l2 7 11 2-11 2z"/></svg></button></form>
           <a class="wa" id="whatsappBtn" href="https://wa.me/5354514448" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.5 5.9L.2 24l6.4-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4Zm-8.4 18.2h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.9-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8Zm5.4-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg> Conversa con nuestro WhatsApp</a>
@@ -828,26 +211,14 @@ footer{background:#06102d}
     <div><div class="eyebrow">Hablemos de tu negocio</div><h2>Deja de perseguir los números.<br><span>Empieza a entenderlos.</span></h2><p>Solicita una primera consulta y cuéntanos qué necesitas ordenar, revisar o mejorar. La respuesta correcta empieza por entender el problema real.</p></div>
     <div class="contact-actions"><a class="btn btn-primary" href="https://wa.me/5354514448?text=Hola%20Consultor%C3%ADa%20Mart%C3%ADnez%2C%20quiero%20solicitar%20una%20consulta." target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="btn btn-light" href="#inicio">Volver arriba</a></div>
   </div>
-
-</section>
-
-<section class="trust-banner" aria-label="Llamada a la acción">
-  <div class="container trust-inner">
-    <div class="trust-icon">💬</div>
-    <div>
-      <strong>Tu tranquilidad financiera, nuestra prioridad</strong>
-      <span>Confía en la experiencia, confía en Consultoría Martínez.</span>
-    </div>
-    <a class="trust-wa" href="https://wa.me/5354514448?text=Hola%20Consultor%C3%ADa%20Mart%C3%ADnez%2C%20quiero%20una%20consulta." target="_blank" rel="noopener noreferrer">◉ &nbsp; CONTÁCTANOS POR WHATSAPP</a>
-  </div>
 </section>
 </main>
 
 <footer>
   <div class="container footer-grid">
-    <div class="footer-brand"><img src="images/logo.jpg" id="footerLogo" alt="Consultoría Martínez"><p>Asesoría contable, financiera, fiscal, jurídica y de capital humano para emprendedores y PYMEs.</p></div>
+    <div class="footer-brand"><img src="images/logo-negative-header.png" id="footerLogo" alt="Consultoría Martínez"><p>Asesoría contable, financiera, fiscal, jurídica y de capital humano para emprendedores y PYMEs.</p></div>
     <div class="footer-col"><h4>Servicios</h4><ul><li><a href="#servicios">Teneduría</a></li><li><a href="#servicios">Contabilidad</a></li><li><a href="#servicios">Estados financieros</a></li><li><a href="#servicios">Impuestos</a></li></ul></div>
-    <div class="footer-col"><h4>Recursos</h4><ul><li><a href="#finza">Finza.M</a></li><li><a href="#recursos">Actualizaciones</a></li><li><a href="#asistente">Asistente virtual</a></li></ul></div>
+    <div class="footer-col"><h4>Recursos</h4><ul><li><a href="#finza">Finza.M</a></li><li><a href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">DEMO 72 horas</a></li><li><a href="#recursos">Actualizaciones</a></li><li><a href="#asistente">Asistente virtual</a></li></ul></div>
     <div class="footer-col"><h4>Contacto</h4><div class="footer-contact">📱 <a href="https://wa.me/5354514448" target="_blank" rel="noopener noreferrer">+53 54514448</a></div><div class="footer-contact">💬 <a href="https://chat.whatsapp.com/J2zimmcwGhI1BwjDHLU1NP" target="_blank" rel="noopener noreferrer">Grupo de WhatsApp</a></div><div class="footer-contact">📍 Cuba</div></div>
   </div>
   <div class="container footer-bottom"><span>© 2026 Consultoría Martínez · Finza.M</span><span>Información orientativa; la aplicación de normas debe verificarse según el caso y la vigencia normativa.</span></div>
@@ -870,7 +241,7 @@ footer{background:#06102d}
       </section>
       <section class="admin-pane" id="pane-chat">
         <div class="form-grid">
-          <div class="field full"><label for="quickInput">Opciones rápidas, separadas por coma</label><input id="quickInput" value="Info de Finza.M,Solicitud de Teneduría,Ayuda Fiscal"></div>
+          <div class="field full"><label for="quickInput">Opciones rápidas, separadas por coma</label><input id="quickInput" value="Conocer Finza.M,Consultar un servicio,Ayuda fiscal,Hablar con un asesor"></div>
           <div class="field"><label for="customQ">Nueva pregunta</label><input id="customQ" placeholder="Ej. ¿Cómo contratar?"></div>
           <div class="field"><label for="customA">Respuesta</label><textarea id="customA" placeholder="Respuesta del asistente"></textarea></div>
         </div>
@@ -891,6 +262,7 @@ footer{background:#06102d}
   </div>
 </div>
 
+<script src="js/assistant-core.js" defer></script>
 <script>
 (() => {
 "use strict";
@@ -906,14 +278,26 @@ function status(el,msg,ok=true){el.textContent=msg;el.className="status show "+(
 
 const defaults = {
   wa:"5354514448",
-  welcome:"Hola, soy el asistente de Consultoría Martínez. ¿En qué puedo ayudarte?",
-  quick:["Info de Finza.M","Solicitud de Teneduría","Ayuda Fiscal"],
+  finzaDemo:"https://gooffylook-rgb.github.io/Finza-v.7.1/",
+  welcome:"Hola, soy el asistente virtual de Consultoría Martínez. Es un gusto atenderte. ¿Qué necesitas resolver hoy?",
+  quick:["Conocer Finza.M","Consultar un servicio","Ayuda fiscal","Hablar con un asesor"],
   qa:[
-    {q:"info de finza.m",a:"Finza.M es nuestra plataforma de gestión contable y financiera para PYMEs. La consultoría puede acompañarte con la herramienta o sin ella."},
-    {q:"solicitud de teneduría",a:"Para orientarte necesito conocer tu tipo de negocio, volumen aproximado de operaciones y qué necesitas ordenar actualmente."},
-    {q:"ayuda fiscal",a:"Podemos orientarte sobre cálculo, revisión y cumplimiento tributario. Para una respuesta concreta necesitamos conocer tu actividad y el período."},
-    {q:"servicios",a:"Ofrecemos Teneduría, Contabilidad Integral, Estados Financieros, Impuestos, Capital Humano, Asesoría Jurídica y Laboral, Análisis Estadístico y Factibilidad."},
-    {q:"precios",a:"Las tarifas dependen del servicio y volumen. Escríbenos por WhatsApp para una propuesta personalizada."}
+    {q:"hola",a:"¡Hola! Bienvenido a Consultoría Martínez. Es un gusto atenderte. Puedo orientarte sobre contabilidad, impuestos, capital humano, control, factibilidad o Finza.M. Cuéntame qué situación tienes y empezamos por lo importante."},
+    {q:"buenos dias",a:"¡Buenos días! Gracias por visitar Consultoría Martínez. ¿Qué aspecto de tu negocio quieres ordenar o revisar?"}, 
+    {q:"buenas tardes",a:"¡Buenas tardes! Estoy aquí para orientarte. Cuéntame brevemente qué necesitas y veremos el camino más adecuado."},
+    {q:"gracias",a:"¡A ti! Cuando quieras, seguimos. Si me cuentas un poco más de tu situación puedo orientarte con mayor precisión."},
+    {q:"info de finza.m",a:"Finza.M es nuestra herramienta de gestión contable y financiera. Puedes conocerla directamente con una DEMO de 72 horas, sin que eso te obligue a contratar una consultoría."},
+    {q:"conocer finza.m",a:"Finza.M es nuestra herramienta de gestión contable y financiera. Puedes probar la DEMO de 72 horas y después decidir si necesitas acompañamiento profesional."},
+    {q:"solicitud de teneduria",a:"La Teneduría de Libros organiza y mantiene los registros de las operaciones de tu negocio. Para orientarte bien, dime qué actividad realizas y si ya llevas algún sistema de registro."},
+    {q:"ayuda fiscal",a:"Puedo ayudarte a identificar qué información necesitas revisar en materia fiscal. Para darte una orientación responsable necesito saber la actividad económica y el período que quieres analizar."},
+    {q:"impuestos",a:"La respuesta fiscal depende de la actividad, forma de gestión, período y norma aplicable. Si me dices qué actividad realizas y qué impuesto te preocupa, podemos precisar el problema antes de hablar de una contratación."},
+    {q:"servicios",a:"Trabajamos en Asesoría Financiera, Contabilidad Oportuna Personalizada, Impuestos y Declaración Jurada, Análisis Estadístico Descriptivo, Estudios de Factibilidad Financiera, Gestión del Capital Humano, Gestión Documental de la Legislación Laboral, Organización de Nomenclatura y clasificación de cargos, Fiscalización y Control e Implementación de la Resolución 60."},
+    {q:"precios",a:"Las tarifas dependen del servicio, alcance y volumen de trabajo. Prefiero no darte una cifra genérica que pueda ser engañosa. Si me dices qué necesitas, puedo ayudarte a definir el servicio adecuado y, si procede, pasamos a una propuesta personalizada."},
+    {q:"contratar",a:"Claro. Antes de derivarte con un asesor, cuéntame qué problema quieres resolver, qué tipo de negocio tienes y qué servicio crees que necesitas. Así evitamos hacerte perder tiempo."},
+    {q:"hablar con un asesor",a:"Por supuesto. Si ya tienes claro que quieres atención personalizada, puedo facilitarte el contacto. Si aún estás explorando, también puedo ayudarte a precisar primero qué servicio necesitas."},
+    {q:"capital humano",a:"Prestamos apoyo en Gestión del Capital Humano, Gestión Documental de la Legislación Laboral y Organización de Nomenclatura y clasificación de cargos."},
+    {q:"resolucion 60",a:"Podemos trabajar en la implementación de la Resolución 60 y en la elaboración de Planes de Medidas para erradicar deficiencias detectadas. Para una respuesta normativa concreta debe verificarse la disposición vigente aplicable al caso."},
+    {q:"factibilidad",a:"Realizamos estudios de factibilidad financiera para nuevos emprendedores interesados, con análisis de proyecciones, punto de equilibrio, riesgos y viabilidad."}
   ],
   news:[
     {id:1,title:"Consulta gratuita para nuevos emprendedores",cat:"promo",date:"Agosto 2026",excerpt:"Una primera conversación para identificar qué necesita realmente tu negocio.",link:"https://wa.me/5354514448"},
@@ -925,6 +309,7 @@ const defaults = {
 function getConfig(){
  return {
   wa:localStorage.getItem(STORE.wa)||defaults.wa,
+  finzaDemo:defaults.finzaDemo,
   welcome:localStorage.getItem(STORE.welcome)||defaults.welcome,
   quick:safeJson(STORE.quick,defaults.quick),
   qa:safeJson(STORE.qa,defaults.qa),
@@ -936,21 +321,44 @@ function renderQuick(){
  const c=getConfig(), box=$("#quickOptions");
  box.innerHTML="";
  c.quick.filter(Boolean).slice(0,5).forEach(t=>{const b=document.createElement("button");b.type="button";b.textContent=t;b.dataset.msg=t;box.appendChild(b)});
- $$("#quickOptions button").forEach(b=>b.addEventListener("click",()=>sendChat(b.dataset.msg)));
+ $$("#quickOptions button").forEach(b=>b.addEventListener("click",()=>{
+  const msg=b.dataset.msg;
+  if(normalize(msg).includes("finza")) showFinzaAction();
+  sendChat(msg);
+}));
 }
 function botReply(input){
- const text=normalize(input), c=getConfig();
- let best=null,score=0;
- c.qa.forEach(item=>{const q=normalize(item.q);const words=q.split(/\s+/).filter(w=>w.length>2);let s=0;words.forEach(w=>{if(text.includes(w))s+=2});if(text===q)s+=8;if(s>score){score=s;best=item}});
- if(best && score>=2)return best.a;
- if(text.includes("finza"))return c.qa.find(x=>normalize(x.q).includes("finza"))?.a||"Finza.M integra gestión contable y financiera.";
- if(text.includes("impuesto")||text.includes("fiscal"))return c.qa.find(x=>normalize(x.q).includes("fiscal"))?.a||"Podemos orientarte en materia fiscal.";
- return "No quiero inventarte una respuesta. Puedo orientarte sobre Finza.M, teneduría, contabilidad, impuestos, capital humano, asesoría jurídica o factibilidad. También puedes escribirnos por WhatsApp.";
+ const result = window.MartinezAssistant.reply(input, getConfig());
+ window.MartinezAssistant.lastResult = result;
+ return result.reply;
 }
 function addBubble(text,who){
- const w=$("#chatWindow"), d=document.createElement("div");d.className="bubble "+(who==="user"?"user":"bot");d.textContent=text;w.appendChild(d);w.scrollTop=w.scrollHeight;
+ const w=$("#chatWindow"), d=document.createElement("div");
+ d.className="bubble "+(who==="user"?"user":"bot");
+ d.textContent=text;w.appendChild(d);w.scrollTop=w.scrollHeight;
 }
-function sendChat(text){text=String(text||"").trim();if(!text)return;addBubble(text,"user");setTimeout(()=>addBubble(botReply(text),"bot"),350)}
+function addAction(label,url){
+ const w=$("#chatWindow"), wrap=document.createElement("div");
+ wrap.className="chat-action";
+ const a=document.createElement("a");
+ a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=label;
+ wrap.appendChild(a);w.appendChild(wrap);w.scrollTop=w.scrollHeight;
+}
+function showFinzaAction(){addAction("Abrir DEMO de Finza.M · 72 horas",defaults.finzaDemo)}
+function sendChat(text){
+ text=String(text||"").trim();if(!text)return;
+ addBubble(text,"user");
+ setTimeout(()=>{
+   const result = window.MartinezAssistant.reply(text, getConfig());
+   window.MartinezAssistant.lastResult = result;
+   addBubble(result.reply,"bot");
+   if(result.action === "finza") showFinzaAction();
+   if(result.action === "advisor") addAction("Hablar con un asesor de Consultoría Martínez", "https://wa.me/"+getConfig().wa+"?text=Hola%20Consultor%C3%ADa%20Mart%C3%ADnez%2C%20quiero%20recibir%20orientaci%C3%B3n%20sobre%20mi%20situaci%C3%B3n.");
+   if(result.softLead){
+      addAction("Quiero recibir orientación personalizada", "#contacto");
+   }
+ },350)
+}
 $("#chatForm").addEventListener("submit",e=>{e.preventDefault();const i=$("#chatInput");sendChat(i.value);i.value=""});
 
 function applyConfig(){
@@ -994,8 +402,8 @@ sections.forEach(s=>io.observe(s));
 // hidden local admin trigger: 3s press on first brand letter
 let timer=null;
 $("#headerLogo").addEventListener("dblclick",openAdmin);
-$(".brand-name").addEventListener("pointerdown",()=>timer=setTimeout(openAdmin,3000));
-["pointerup","pointerleave","pointercancel"].forEach(ev=>$(".brand-name").addEventListener(ev,()=>{if(timer){clearTimeout(timer);timer=null}}));
+$("#headerLogo").addEventListener("pointerdown",()=>timer=setTimeout(openAdmin,3000));
+["pointerup","pointerleave","pointercancel"].forEach(ev=>$("#headerLogo").addEventListener(ev,()=>{if(timer){clearTimeout(timer);timer=null}}));
 function openAdmin(){const o=$("#adminOverlay");o.classList.add("open");o.setAttribute("aria-hidden","false");document.body.classList.add("modal-open");applyConfig();renderAdminNews()}
 function closeAdmin(){const o=$("#adminOverlay");o.classList.remove("open");o.setAttribute("aria-hidden","true");document.body.classList.remove("modal-open")}
 $("#adminClose").onclick=closeAdmin;$("#adminOverlay").addEventListener("click",e=>{if(e.target.id==="adminOverlay")closeAdmin()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAdmin()});
@@ -1003,20 +411,5 @@ $("#adminClose").onclick=closeAdmin;$("#adminOverlay").addEventListener("click",
 applyConfig();renderAdminNews();
 })();
 </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const main=document.querySelector("main");
-  const hero=document.getElementById("inicio");
-  const services=document.getElementById("servicios");
-  const product=document.getElementById("finza");
-  const resources=document.getElementById("recursos");
-  const contact=document.getElementById("contacto");
-  if(main && hero && services && product && resources && contact){
-    [hero,services,product,resources,contact].forEach(s=>main.appendChild(s));
-  }
-});
-</script>
-
 </body>
 </html>
