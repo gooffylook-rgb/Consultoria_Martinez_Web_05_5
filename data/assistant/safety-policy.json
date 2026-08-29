@@ -1,1 +1,12 @@
-
+{
+  "version": "K.6",
+  "rules": [
+    "no_fabrication",
+    "source_required_for_specific_legal_claim",
+    "uncertainty_disclosure",
+    "private_data_denial",
+    "prompt_injection_resistance",
+    "no_cross_client_data",
+    "human_escalation_when_needed"
+  ]
+}
