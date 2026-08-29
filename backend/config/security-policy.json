@@ -1,1 +1,1 @@
-
+{"public_frontend":{"secrets":false,"private_documents":false,"admin_logic":false},"assistant":{"must_admit_uncertainty":true,"must_not_invent_sources":true,"must_not_reveal_private_content":true},"resources":{"auto_publish":false,"human_review_required":true,"public_api_read_only":true}}
