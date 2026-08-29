@@ -1,1 +1,1 @@
-
+Aquí vivirán los endpoints del backend real: /api/chat, /api/resources y /api/admin. La implementación se realizará en la infraestructura elegida en K.7, con secretos fuera del frontend y control de acceso para administración.
