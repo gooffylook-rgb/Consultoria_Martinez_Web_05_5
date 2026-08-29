@@ -1,1 +1,3 @@
+# faq
 
+Preguntas frecuentes revisables.
