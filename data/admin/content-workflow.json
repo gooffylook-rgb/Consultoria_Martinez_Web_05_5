@@ -1,1 +1,38 @@
-
+{
+  "version": "K.9",
+  "states": [
+    "inbox",
+    "classified",
+    "review",
+    "approved",
+    "published",
+    "rejected",
+    "archived"
+  ],
+  "rules": {
+    "auto_publish": false,
+    "assistant_requires_approved_source": true,
+    "assistant_requires_explicit_authorization": true,
+    "public_resources_requires_explicit_authorization": true,
+    "whatsapp_is_input_only": true,
+    "human_review_required": true,
+    "provenance_required": true,
+    "legal_status_required_for_normative_content": true
+  },
+  "ingestion": {
+    "supported": [
+      "pdf",
+      "docx",
+      "xlsx",
+      "text",
+      "link",
+      "publication",
+      "authorized_message"
+    ],
+    "images": "pending_ocr",
+    "local_extraction": {
+      "text": "available",
+      "pdf_docx_xlsx": "backend_processor_required"
+    }
+  }
+}
