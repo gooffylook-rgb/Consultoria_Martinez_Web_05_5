@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Consultoría Martínez — Asistente Virtual Martínez",
+  "purpose": "Índice público de metadatos de la futura base documental. No contiene documentos privados ni secretos.",
+  "last_updated": null,
+  "documents": [],
+  "rules": {
+    "default_status": "pending_review",
+    "require_source": true,
+    "require_review_before_assistant_use": true,
+    "deprecated_or_repealed_documents": "never_answer_as_current_law"
+  }
+}
