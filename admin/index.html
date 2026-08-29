@@ -1,1 +1,146 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>K.9 | Gobierno documental — Consultoría Martínez</title>
+<style>
+:root{--p:#5b36a0;--p2:#8657bf;--ink:#24153f;--mut:#686574;--bg:#f3f1f8;--glass:rgba(255,255,255,.78)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 0,#e8dcff,transparent 30%),var(--bg)}
+.wrap{max-width:1280px;margin:auto;padding:26px}.hero{padding:18px 0 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.ey{font-size:11px;font-weight:bold;letter-spacing:1.4px;color:var(--p);text-transform:uppercase}.hero h1{margin:5px 0;font-size:clamp(28px,5vw,46px)}.hero p{max-width:780px;color:var(--mut)}
+.card{background:var(--glass);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.9);border-radius:20px;padding:20px;margin:14px 0;box-shadow:0 12px 40px #24153f12}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.stat{padding:15px;border-radius:16px;background:rgba(255,255,255,.7)}.stat strong{font-size:28px;display:block;margin-top:5px}
+.ingest{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}.drop{border:2px dashed #bba9d8;border-radius:18px;padding:35px 20px;text-align:center;background:rgba(255,255,255,.5);transition:.2s}.drop.drag{background:#ede4fa;border-color:var(--p)}
+input,select,textarea,button{font:inherit}input,select,textarea{width:100%;padding:11px;margin:5px 0 11px;border:1px solid #d8d1e3;border-radius:10px;background:#fff}label{font-size:12px;font-weight:bold}textarea{resize:vertical}button{border:0;border-radius:10px;padding:11px 15px;background:var(--p);color:white;font-weight:bold;cursor:pointer}button.alt{background:#eee8f6;color:var(--ink)}button.danger{background:#9b3349}button:disabled{opacity:.5;cursor:not-allowed}.actions{display:flex;gap:8px;flex-wrap:wrap}
+.item{padding:14px;border:1px solid #e3ddeb;border-radius:14px;margin:10px 0;background:rgba(255,255,255,.72)}.meta{font-size:12px;color:var(--mut);margin:5px 0}.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#ece5f7;font-size:11px;font-weight:bold;margin-right:5px}.empty{color:var(--mut);padding:12px 0}
+.warn{padding:12px 14px;border-radius:12px;background:#fff3cd;font-size:13px}.ok{padding:12px 14px;border-radius:12px;background:#e8f7ee;font-size:13px}.err{padding:12px 14px;border-radius:12px;background:#fde8ec;font-size:13px;color:#8a1f3a}
+.salir{background:#eee8f6;color:var(--ink);align-self:flex-start;white-space:nowrap}
+@media(max-width:760px){.wrap{padding:18px}.ingest{grid-template-columns:1fr}.card{padding:16px}}
+</style></head><body><main class="wrap">
+<div class="hero"><div><div class="ey">05.5.2-K.9 · backend real conectado</div><h1>Ingesta documental y gobierno de información</h1><p>Una entrada no se publica ni se convierte automáticamente en conocimiento del asistente. Este panel registra procedencia, metadatos, extracción disponible, revisión y autorizaciones — guardado en una base de datos real, no en este navegador.</p></div><button class="salir" id="salir">Cerrar sesión (<span id="quien"></span>)</button></div>
+<div id="estadoConexion" class="warn">Conectando con la base de datos…</div>
+<div class="card grid" id="stats"></div>
+<section class="card"><h2>1. Recibir y registrar</h2><div class="ingest"><div class="drop" id="drop"><b>Arrastra un archivo aquí</b><p>PDF · DOCX · XLSX · TXT · imágenes (OCR futuro)</p><input id="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.md,.png,.jpg,.jpeg,image/*"><small id="fileInfo">También puedes registrar un enlace, publicación o mensaje autorizado sin adjuntar archivo.</small></div>
+<div><label>Título *</label><input id="title" required placeholder="Identificación clara del contenido"><label>Fuente *</label><input id="source" placeholder="Organismo, sitio, grupo autorizado…"><label>Tipo de fuente</label><select id="sourceType"><option value="official">Oficial</option><option value="consultoria_martinez">Consultoría Martínez</option><option value="authorized_channel">Canal autorizado</option><option value="educational">Educativa</option><option value="other">Otra</option></select><label>Tipo de contenido</label><select id="contentType"><option value="normativa">Normativa</option><option value="fiscal">Fiscal</option><option value="laboral">Laboral</option><option value="contable">Contable</option><option value="guia_educativa">Guía</option><option value="analisis_profesional">Análisis profesional</option><option value="faq">FAQ</option><option value="publication">Publicación / mensaje</option></select><label>Enlace o referencia</label><input id="reference" placeholder="URL o referencia interna"></div></div>
+<div class="ingest" style="margin-top:10px"><div><label>Fecha del documento</label><input id="docDate" type="date"><label>Entrada en vigor</label><input id="effectiveDate" type="date"><label>Estado jurídico</label><select id="legalStatus"><option value="pending_review">Pendiente de verificar</option><option value="vigente">Vigente</option><option value="modificado">Modificada</option><option value="sustituido">Sustituida</option><option value="derogado">Derogada</option><option value="historico">Histórica</option></select></div>
+<div><label>Temas (separados por coma)</label><input id="topics" placeholder="tributación, declaración jurada"><label>Relaciones con otros documentos</label><input id="relations" placeholder="ID o referencia: modifica / sustituye / deroga…"><label>Notas de recepción</label><textarea id="notes" rows="4" placeholder="Contexto, procedencia y observaciones"></textarea></div></div>
+<div class="actions"><button id="save">Registrar en bandeja</button><button class="alt" id="clear" type="button">Limpiar</button></div></section>
+<section class="card"><h2>2. Bandeja y trazabilidad</h2><div id="list">Cargando…</div></section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../js/supabase-config.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+let selected=null, sesion=null;
 
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+async function iniciar(){
+  const { data } = await supabaseClient.auth.getSession();
+  if (!data.session){ window.location.href='login.html'; return; }
+  sesion = data.session;
+  $('quien').textContent = sesion.user.email;
+  $('estadoConexion').remove();
+  cargarLista();
+}
+$('salir').onclick = async () => { await supabaseClient.auth.signOut(); window.location.href='login.html'; };
+
+async function registrarAuditoria(document_id, event){
+  await supabaseClient.from('audit_log').insert({ document_id, event, actor_email: sesion.user.email });
+}
+
+async function cargarLista(){
+  const { data, error } = await supabaseClient.from('documents').select('*').order('received_at', { ascending:false });
+  if (error){ $('list').innerHTML = `<div class="err">No se pudo cargar: ${esc(error.message)}</div>`; return; }
+  render(data || []);
+}
+
+function render(a){
+  const states=['inbox','classified','review','approved','published','rejected','archived'];
+  $('stats').innerHTML = states.map(s=>`<div class="stat"><small>${s}</small><strong>${a.filter(x=>x.status===s).length}</strong></div>`).join('');
+  $('list').innerHTML = a.length ? a.map(x=>`<article class="item"><b>${esc(x.title)}</b><div class="meta">${esc(x.source)} · ${esc(x.content_type)} · recibido ${new Date(x.received_at).toLocaleString()}</div><span class="badge">${esc(x.status)}</span><span class="badge">asistente: ${x.assistant_authorized?'sí':'no'}</span><span class="badge">recursos: ${x.resources_authorized?'sí':'no'}</span><span class="badge">extracción: ${esc(x.extraction_status)}</span><div class="actions" style="margin-top:10px"><button onclick="mover('${x.id}','classified')">Clasificar</button><button onclick="mover('${x.id}','review')">Revisión</button><button onclick="mover('${x.id}','approved')">Aprobar</button><button onclick="autorizar('${x.id}','${x.status}','assistant_authorized')">Autorizar asistente</button><button onclick="autorizar('${x.id}','${x.status}','resources_authorized')">Autorizar recursos</button><button onclick="publicar('${x.id}',${x.resources_authorized})">Publicar</button><button class="alt" onclick="mover('${x.id}','archived')">Archivar</button><button class="danger" onclick="mover('${x.id}','rejected')">Rechazar</button></div><div class="meta">${esc(x.file_name||'sin archivo')}</div></article>`).join('') : '<div class="empty">No hay documentos registrados.</div>';
+}
+
+window.mover = async (id, status) => {
+  const { error } = await supabaseClient.from('documents').update({ status }).eq('id', id);
+  if (error){ alert('Error: '+error.message); return; }
+  await registrarAuditoria(id, 'estado → '+status);
+  cargarLista();
+};
+
+window.autorizar = async (id, statusActual, campo) => {
+  if (statusActual !== 'approved' && statusActual !== 'published'){ alert('Primero debe estar aprobado.'); return; }
+  const { error } = await supabaseClient.from('documents').update({ [campo]: true }).eq('id', id);
+  if (error){ alert('Error: '+error.message); return; }
+  await registrarAuditoria(id, 'autorizado: '+campo);
+  cargarLista();
+};
+
+window.publicar = async (id, resourcesAuthorized) => {
+  if (!resourcesAuthorized){ alert('Debe autorizarse primero para Recursos.'); return; }
+  const { error } = await supabaseClient.from('documents').update({ status:'published' }).eq('id', id);
+  if (error){ alert('Error: '+error.message); return; }
+  await registrarAuditoria(id, 'publicado en recursos');
+  cargarLista();
+};
+
+function extractInfo(f){
+  if(!f) return 'not_applicable';
+  const ext=(f.name.split('.').pop()||'').toLowerCase();
+  if(['txt','md'].includes(ext)) return 'available_local';
+  if(['pdf','doc','docx','xls','xlsx'].includes(ext)) return 'pending_processor';
+  return 'pending_ocr';
+}
+
+function limpiar(){
+  ['title','source','reference','docDate','effectiveDate','topics','relations','notes','file'].forEach(k=>$(k).value='');
+  selected=null;
+  $('fileInfo').textContent='También puedes registrar un enlace, publicación o mensaje autorizado sin adjuntar archivo.';
+}
+$('file').onchange=e=>{selected=e.target.files[0]||null;if(selected)$('fileInfo').textContent=selected.name+' · '+Math.round(selected.size/1024)+' KB'}
+$('drop').ondragover=e=>{e.preventDefault();$('drop').classList.add('drag')};
+$('drop').ondragleave=()=>$('drop').classList.remove('drag');
+$('drop').ondrop=e=>{e.preventDefault();$('drop').classList.remove('drag');selected=e.dataTransfer.files[0]||null;if(selected){$('fileInfo').textContent=selected.name+' · '+Math.round(selected.size/1024)+' KB'}};
+
+$('save').onclick=async ()=>{
+  const title=$('title').value.trim(), source=$('source').value.trim();
+  if(!title||!source){alert('Título y fuente son obligatorios.');return}
+  $('save').disabled=true;
+
+  let filePath=null;
+  if (selected){
+    const ruta = `${Date.now()}_${selected.name}`;
+    const { error: upErr } = await supabaseClient.storage.from('documentos-privados').upload(ruta, selected);
+    if (upErr){ alert('No se pudo subir el archivo: '+upErr.message); $('save').disabled=false; return; }
+    filePath = ruta;
+  }
+
+  const registro = {
+    title, source,
+    source_type: $('sourceType').value,
+    content_type: $('contentType').value,
+    reference: $('reference').value.trim() || null,
+    document_date: $('docDate').value || null,
+    effective_date: $('effectiveDate').value || null,
+    legal_status: $('legalStatus').value,
+    topics: $('topics').value.split(',').map(s=>s.trim()).filter(Boolean),
+    relations: $('relations').value.trim() || null,
+    notes: $('notes').value.trim() || null,
+    status: 'inbox',
+    file_name: selected ? selected.name : null,
+    file_size: selected ? selected.size : null,
+    file_type: selected ? selected.type : null,
+    file_path: filePath,
+    extraction_status: extractInfo(selected),
+    created_by: sesion.user.id
+  };
+
+  const { data, error } = await supabaseClient.from('documents').insert(registro).select().single();
+  $('save').disabled=false;
+  if (error){ alert('No se pudo registrar: '+error.message); return; }
+  await registrarAuditoria(data.id, 'recepción y registro');
+  limpiar();
+  cargarLista();
+  alert('Entrada registrada en bandeja. No ha sido publicada ni autorizada para el asistente.');
+};
+$('clear').onclick=limpiar;
+
+iniciar();
+</script>
+</body></html>
