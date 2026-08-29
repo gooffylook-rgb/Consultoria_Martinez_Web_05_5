@@ -74,24 +74,33 @@ a{color:inherit}
 .section-heading{position:relative;z-index:2;text-align:center;color:#fff;margin-bottom:46px}.section-heading .eyebrow{color:#d5afe7}.section-heading h2{font:800 clamp(2rem,4vw,3rem)/1.05 "Montserrat";margin-bottom:13px}.section-heading h2 span{color:#c48ce1}.section-heading p{max-width:700px;margin:auto;color:rgba(255,255,255,.72)}
 .services-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:34px;align-items:start}
 .services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.service-card{background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.55);border-radius:18px;padding:26px 24px;min-height:210px;box-shadow:0 18px 48px rgba(0,0,0,.22);transition:.28s;position:relative;overflow:hidden}
+.service-card{background:rgba(255,255,255,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.42);border-radius:18px;padding:26px 24px;min-height:210px;box-shadow:0 18px 48px rgba(0,0,0,.22);transition:.28s;position:relative;overflow:hidden}
 .service-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--purple-700),var(--purple-300));transform:scaleX(0);transform-origin:left;transition:.28s}
 .service-card:hover{transform:translateY(-6px);box-shadow:0 26px 55px rgba(0,0,0,.30)}.service-card:hover:before{transform:scaleX(1)}
 .icon-box{width:62px;height:62px;border-radius:16px;background:linear-gradient(135deg,#f3e9fa,#fff);display:grid;place-items:center;margin-bottom:16px}.icon-box svg{width:34px;height:34px;fill:none;stroke:var(--purple-700);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.service-card h3{font:800 1rem/1.2 "Montserrat";margin-bottom:8px}.service-card p{font-size:.83rem;color:var(--muted)}
+.service-card h3{font:800 1rem/1.2 "Montserrat";margin-bottom:8px}.service-card p{font-size:.83rem;color:#4f4a58}
 .service-card .service-link{display:inline-flex;gap:6px;align-items:center;margin-top:14px;text-decoration:none;color:var(--purple-700);font:800 .72rem/1 "Montserrat";letter-spacing:.8px;text-transform:uppercase}
-/* ASSISTANT */
-.assistant{position:sticky;top:105px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 32px 85px rgba(0,0,0,.40);border:1px solid rgba(255,255,255,.65)}
-.assistant-head{background:radial-gradient(circle at 50% 15%,rgba(151,91,220,.28),transparent 45%),linear-gradient(145deg,#faf8fd 0%,#eee6f7 100%);padding:22px 18px 0;text-align:center;border-bottom:1px solid #e5dfe9}
-.assistant-head h3{font:900 1.05rem/1.15 "Montserrat";text-transform:uppercase;color:var(--purple-800);letter-spacing:.8px}.assistant-head h3 span{color:var(--purple-500)}
-.avatar-wrap{width:100%;height:335px;margin:8px auto 0;position:relative;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}.avatar-wrap img{height:100%;width:100%;object-fit:contain;object-position:center bottom;mix-blend-mode:normal;filter:drop-shadow(0 18px 24px rgba(32,16,48,.24))}
-.avatar-wrap:after{content:"";position:absolute;left:14%;right:14%;bottom:0;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(67,40,111,.22),transparent 70%);pointer-events:none}
-.question{position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--purple-800);font:900 1.25rem "Montserrat";box-shadow:0 8px 22px rgba(0,0,0,.16);border:2px solid var(--purple-600);z-index:2}
-.chat{padding:17px}.chat-window{max-height:245px;overflow:auto;display:flex;flex-direction:column;gap:9px;padding-right:2px}.bubble{max-width:90%;padding:10px 12px;border-radius:13px;font-size:.78rem;white-space:pre-line}.bubble.bot{align-self:flex-start;background:#f5f2f8;color:#322a3b;border-top-left-radius:4px}.bubble.user{align-self:flex-end;background:var(--purple-700);color:#fff;border-top-right-radius:4px}
+/* SERVICE ACTION FLOW + K.6 */
+.service-link{cursor:pointer}.service-card .service-link:focus-visible{outline:3px solid rgba(194,138,228,.7);outline-offset:4px}
+/* ASSISTANT — K.4 */
+.assistant{position:sticky;top:105px;background:#fff;border-radius:30px;overflow:hidden;box-shadow:0 32px 85px rgba(22,10,45,.30);border:1px solid rgba(255,255,255,.78)}
+.assistant-head{background:linear-gradient(145deg,#fbfaff 0%,#f2eff7 100%);padding:20px 18px 0;text-align:left;border-bottom:0;position:relative}
+.assistant-status{display:inline-flex;align-items:center;gap:7px;background:#dcf8e8;color:#087d43;border-radius:999px;padding:6px 12px;font:800 .64rem/1 "Montserrat";margin-bottom:9px}
+.assistant-status:before{content:"";width:8px;height:8px;border-radius:50%;background:#18b866;box-shadow:0 0 0 4px rgba(24,184,102,.12)}
+.assistant-head h3{font:900 1.12rem/1.1 "Montserrat";text-transform:uppercase;color:#20205c;letter-spacing:1px;margin:0}
+.assistant-head h3 span{color:#20205c;display:inline}
+.assistant-sub{font:600 .73rem/1.35 "Montserrat";color:#596077;margin:7px 0 12px}
+.avatar-wrap{width:100%;height:310px;margin:0 auto;position:relative;display:flex;justify-content:center;align-items:flex-end;overflow:hidden;border-radius:18px 18px 0 0;background:radial-gradient(circle at 50% 18%,#9c5dff 0%,#6034b8 40%,#29115c 100%)}
+.avatar-wrap:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 85%,rgba(255,255,255,.13),transparent 30%),radial-gradient(circle at 84% 12%,rgba(255,255,255,.10),transparent 25%);pointer-events:none}
+.avatar-wrap img{height:104%;width:112%;max-width:none;object-fit:contain;object-position:center bottom;position:relative;z-index:1;filter:drop-shadow(0 18px 20px rgba(14,4,38,.30))}
+.avatar-wrap:after{content:"";position:absolute;left:10%;right:10%;bottom:-8px;height:30px;border-radius:50%;background:radial-gradient(ellipse,rgba(11,4,28,.35),transparent 68%);pointer-events:none;z-index:2}
+.question{display:none}
+.chat{padding:14px 16px 17px;background:#fff}.chat-window{max-height:235px;overflow:auto;display:flex;flex-direction:column;gap:9px;padding-right:2px}.bubble{max-width:92%;padding:11px 13px;border-radius:14px;font-size:.78rem;line-height:1.42;white-space:pre-line}.bubble.bot{align-self:flex-start;background:#f4f2f7;color:#25263d;border-top-left-radius:5px}.bubble.user{align-self:flex-end;background:linear-gradient(135deg,#5030b5,#7647dc);color:#fff;border-top-right-radius:5px}
+.typing{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;background:#f4f2f7;border-radius:14px;border-top-left-radius:5px}.typing i{width:6px;height:6px;border-radius:50%;background:#796e91;animation:cmtyping 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}@keyframes cmtyping{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-4px);opacity:1}}
 .chat-action{align-self:flex-start;max-width:95%}.chat-action a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:linear-gradient(135deg,var(--purple-700),var(--purple-500));color:#fff;border-radius:999px;padding:10px 14px;font:800 .68rem "Montserrat";letter-spacing:.3px;box-shadow:0 8px 18px rgba(91,54,160,.22)}
-.quick{display:grid;gap:8px;margin:13px 0}.quick button{background:#fff;color:var(--purple-700);border:1px solid #cdbbdd;border-radius:999px;padding:9px 10px;font:700 .72rem "Montserrat";transition:.2s}.quick button:hover{background:var(--purple-700);color:#fff}
-.chat-form{display:flex;gap:8px;border-top:1px solid #eee;padding-top:13px}.chat-form input{min-width:0;flex:1;border:1px solid #ddd7e3;border-radius:999px;padding:10px 13px;outline:0;font-size:.78rem}.chat-form input:focus{border-color:var(--purple-600);box-shadow:0 0 0 3px rgba(107,63,160,.09)}.send{width:42px;height:42px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--purple-700),var(--purple-500));color:#fff;display:grid;place-items:center}.send svg{width:18px;height:18px;fill:currentColor}
-.wa{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:12px;text-decoration:none;color:#fff;background:var(--green);border-radius:999px;padding:12px 14px;font:800 .72rem "Montserrat";letter-spacing:.5px;box-shadow:0 10px 22px rgba(37,211,102,.25)}.wa svg{width:21px;height:21px;fill:currentColor}
+.quick{display:grid;gap:9px;margin:13px 0}.quick button{border:0;color:#fff;border-radius:15px;padding:12px 14px;font:800 .74rem "Montserrat";letter-spacing:.15px;box-shadow:0 7px 16px rgba(22,18,55,.15);transition:transform .2s,filter .2s}.quick button:hover{transform:translateY(-1px);filter:brightness(1.04)}.quick button:nth-child(1){background:linear-gradient(135deg,#4b1bc8,#7d35ef)}.quick button:nth-child(2){background:linear-gradient(135deg,#176fd1,#2496ee)}.quick button:nth-child(3){background:linear-gradient(135deg,#e78012,#ff9e18)}.quick button:nth-child(4){background:linear-gradient(135deg,#07834d,#16b866)}
+.chat-form{display:flex;gap:8px;border-top:0;padding-top:8px}.chat-form input{min-width:0;flex:1;border:1px solid #ded9e7;border-radius:999px;padding:12px 14px;outline:0;font-size:.78rem;background:#faf9fc}.chat-form input:focus{border-color:#6740c6;box-shadow:0 0 0 3px rgba(107,63,160,.10)}.send{width:44px;height:44px;border:0;border-radius:50%;background:linear-gradient(135deg,#4b27b4,#7145db);color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px rgba(76,42,173,.28)}.send svg{width:18px;height:18px;fill:currentColor}
+.wa{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:12px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#059a57,#14bd70);border-radius:15px;padding:13px 14px;font:800 .75rem "Montserrat";letter-spacing:.3px;box-shadow:0 10px 22px rgba(37,211,102,.22)}.wa svg{width:21px;height:21px;fill:currentColor}
 /* RESOURCES */
 .resources{padding:100px 0;background:linear-gradient(135deg,#faf9fb,#f0edf4)}
 .resources .section-heading{color:var(--ink)}.resources .section-heading .eyebrow{color:var(--purple-700)}.resources .section-heading p{color:var(--muted)}
@@ -107,6 +116,22 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
 @media(max-width:800px){.container{width:min(calc(100% - 32px),var(--max))}.header-inner{min-height:72px}.brand img{width:205px;height:56px}.brand-name{font-size:14px}.brand-tag{font-size:7px;letter-spacing:1.6px}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px 20px 20px;box-shadow:0 20px 30px rgba(0,0,0,.10);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:14px 4px;border-bottom:1px solid #eee}.nav a:after{bottom:5px}.menu{display:block}.hero{min-height:720px}.hero-content{padding-top:70px;padding-left:18px;padding-right:18px;background:linear-gradient(90deg,rgba(20,9,30,.64),rgba(20,9,30,.28))}.hero-scroll{display:none}.tablet{width:180px;right:-3px}.services-grid,.news-grid{grid-template-columns:1fr}.product{padding:76px 0}.device-stage{min-height:290px}.laptop{width:100%}.contact-card{grid-template-columns:1fr}.contact-actions{justify-content:flex-start}.footer-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
 @media(max-width:520px){.container{width:min(calc(100% - 24px),var(--max))}.brand-copy{display:none}.hero{min-height:690px}.hero h1{font-size:2.15rem}.hero p{font-size:.94rem}.cta-row .btn{width:100%;max-width:330px}.product-inner{gap:34px}.device-stage{min-height:230px}.tablet{width:118px}.services,.resources,.contact{padding:72px 0}.assistant-head h3{font-size:.95rem}.avatar-wrap{height:300px;width:100%}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.admin-body{padding:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.service-card,.btn{transition:none}}
+
+.resource-hub-note{margin:18px 0 22px;padding:16px 18px;border:1px solid rgba(255,255,255,.18);border-radius:16px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);color:inherit;font-size:.96rem}.resource-hub-note strong{display:block;margin-bottom:4px}
+.news-card{transition:transform .25s ease,box-shadow .25s ease}.news-card:hover{transform:translateY(-4px)}
+
+/* 05.5.2-K.9 VISUAL REFINEMENT — glass services + Finza.M showcase */
+.product{padding:84px 0;background:radial-gradient(circle at 15% 0,rgba(122,85,191,.16),transparent 34%),#f6f7fb}
+.product-inner{background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(242,246,255,.82));border:1px solid rgba(255,255,255,.95);border-radius:30px;padding:48px;box-shadow:0 26px 80px rgba(30,35,75,.14);display:grid;grid-template-columns:1.02fr 1fr;gap:42px;align-items:center;overflow:hidden;position:relative}
+.product-inner:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-180px;bottom:-250px;background:radial-gradient(circle,rgba(122,77,238,.16),transparent 68%);pointer-events:none}
+.product-copy{position:relative;z-index:1}.finza-kicker{display:inline-flex;align-items:center;gap:9px;font:800 .7rem/1 "Montserrat";letter-spacing:1.4px;text-transform:uppercase;color:#27346f;background:#e6e9f7;padding:9px 15px;border-radius:999px;margin-bottom:13px}.finza-mark{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#1679a8;color:#fff;font-weight:900}
+.product h2{font:900 clamp(2.7rem,6vw,4.6rem)/.9 "Montserrat";color:#1f3274;letter-spacing:-2px}.product h2 span{color:#137eaa}.finza-sub{font:800 clamp(1rem,2vw,1.45rem)/1.2 "Montserrat";color:#1679a8;margin:10px 0 17px}.finza-desc{font-size:1rem;color:#42495c;max-width:590px}
+.finza-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}.finza-feature{display:flex;align-items:center;gap:10px;font-weight:700;color:#30384c}.finza-feature i{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:#147d48;color:#fff;font-style:normal;font-size:.8rem}
+.finza-actions{display:flex;gap:14px;flex-wrap:wrap}.finza-demo{background:linear-gradient(135deg,#6e30d7,#4120c5)!important;color:#fff!important;border:0!important;box-shadow:0 15px 32px rgba(81,39,201,.25)}.finza-github{background:rgba(255,255,255,.72)!important;border:2px solid #68709b!important;color:#27346f!important}
+.demo-badge{position:absolute;z-index:4;left:2%;top:5%;width:118px;height:142px;border-radius:38px 38px 42px 42px;background:linear-gradient(150deg,#124b3c,#11815d);color:#fff;display:grid;place-items:center;text-align:center;font:900 1.05rem/1.05 "Montserrat";box-shadow:0 16px 30px rgba(8,68,50,.2)}.demo-badge b{display:block;font-size:2.5rem;margin-top:-18px}
+.device-stage{position:relative;z-index:1;min-height:420px;display:flex;align-items:center;justify-content:center}.laptop{width:88%;border-radius:14px;overflow:hidden;border:10px solid #111a2d;box-shadow:0 28px 55px rgba(24,29,48,.28);transform:perspective(1200px) rotateY(-6deg) rotateX(2deg)}.laptop img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}.tablet{display:none}.finza-footer{position:absolute;z-index:5;right:5%;bottom:4%;left:18%;padding:11px 18px;border-radius:999px;text-align:center;background:linear-gradient(90deg,#10824b,#0c9a64);color:#fff;font:800 .78rem/1 "Montserrat";letter-spacing:.4px}
+.services-grid{gap:22px}.service-card{background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 18px 42px rgba(0,0,0,.24);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);color:#fff}.service-card:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.16),transparent 35%,rgba(255,255,255,.04));pointer-events:none}.service-card>*{position:relative;z-index:1}.service-card p{color:rgba(255,255,255,.75)}.service-card:hover{transform:translateY(-7px) scale(1.012);background:linear-gradient(145deg,rgba(255,255,255,.43),rgba(255,255,255,.16));box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 28px 58px rgba(0,0,0,.31)}.icon-box{background:linear-gradient(145deg,var(--accent,#6b3fa0),color-mix(in srgb,var(--accent,#6b3fa0) 60%,white));box-shadow:0 8px 24px color-mix(in srgb,var(--accent,#6b3fa0) 35%,transparent)}.icon-box svg{stroke:#fff}.service-card .service-link{color:var(--accent,#c28ae4)}.service-card:nth-child(1){--accent:#2187e5}.service-card:nth-child(2){--accent:#8244d8}.service-card:nth-child(3){--accent:#22a96d}.service-card:nth-child(4){--accent:#ff901e}.service-card:nth-child(5){--accent:#ef3f75}.service-card:nth-child(6){--accent:#5b5bd6}.service-card:nth-child(7){--accent:#25a9c4}.service-card:nth-child(8){--accent:#f1b500}
+@media(max-width:850px){.product-inner{grid-template-columns:1fr;padding:30px 22px}.device-stage{min-height:330px}.finza-features{grid-template-columns:1fr}.demo-badge{left:0;top:0;transform:scale(.82);transform-origin:top left}.finza-footer{left:10%;right:4%;bottom:1%}.services-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -118,7 +143,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
       <img src="images/logo-header.png" alt="Logotipo de Consultoría Martínez" id="headerLogo">
     </a>
     <nav class="nav" id="mainNav" aria-label="Navegación principal">
-      <a class="active" href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#finza">Finza.M</a><a href="#recursos">Recursos</a><a href="#contacto">Contacto</a>
+      <a class="active" href="#inicio">Inicio</a><a href="#finza">Finza.M</a><a href="#servicios">Servicios</a><a href="#recursos">Recursos</a><a href="#contacto">Contacto</a>
     </nav>
     <button class="menu" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -133,28 +158,14 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
     <p>Contabilidad, finanzas, fiscalidad, capital humano y asesoría jurídica, integrados con la visión tecnológica de Finza.M.</p>
     <div class="cta-row"><a class="btn btn-primary" href="#contacto">Solicita tu consulta gratuita</a><a class="btn btn-light" href="#finza">Conoce Finza.M</a></div>
   </div>
-  <a class="hero-scroll" href="#servicios">Explorar</a>
+  <a class="hero-scroll" href="#finza">Explorar</a>
 </section>
 
-<section class="product" id="finza">
-  <div class="container product-inner">
-    <div class="product-copy">
-      <div class="eyebrow">Tecnología aplicada a tus finanzas</div>
-      <h2>Finza.<span>M</span> — más control, menos incertidumbre.</h2>
-      <p>Una plataforma pensada para convertir operaciones y datos de tu negocio en información útil para decidir. La consultoría y la herramienta trabajan juntas, sin obligarte a usar una u otra.</p>
-      <ul class="feature-list">
-        <li><span class="check">✓</span><span>Gestión contable y financiera orientada a la realidad de las PYMEs cubanas.</span></li>
-        <li><span class="check">✓</span><span>Reportes y visualización para entender resultados, liquidez y evolución.</span></li>
-        <li><span class="check">✓</span><span>Arquitectura preparada para crecer por módulos según las necesidades del usuario.</span></li>
-      </ul>
-      <div class="cta-row" style="justify-content:flex-start"><a class="btn btn-primary" href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">Probar Finza.M · DEMO 72 h</a><a class="btn btn-light" href="#asistente">Preguntar al asistente</a></div>
-    </div>
-    <div class="device-stage" aria-label="Vista de Finza.M en dispositivos">
-      <div class="laptop"><img src="images/dashboard.jpg" id="deviceLaptopImg" alt="Panel de control de Finza.M en una laptop" loading="lazy"></div>
-      <div class="tablet"><img src="images/dashboard.jpg" id="deviceTabletImg" alt="Panel de control de Finza.M en una tableta" loading="lazy"></div>
-    </div>
-  </div>
-</section>
+<section class="product" id="finza"><div class="container product-inner">
+<div class="product-copy"><div class="finza-kicker"><span class="finza-mark">F</span> Tecnología propia</div><h2>FINZA.<span>M</span></h2><div class="finza-sub">Gestión · Control · Información para decidir</div><p class="finza-desc">El sistema contable y de gestión creado por Consultoría Martínez, diseñado para acompañar la realidad operativa de los negocios en Cuba.</p>
+<div class="finza-features"><div class="finza-feature"><i>✓</i>Contabilidad multi-actor</div><div class="finza-feature"><i>✓</i>POS + ventas</div><div class="finza-feature"><i>✓</i>Control de inventario</div><div class="finza-feature"><i>✓</i>Informes automáticos</div></div>
+<div class="finza-actions"><a class="btn finza-demo" href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">Probar DEMO 72 horas ↗</a><a class="btn finza-github" href="https://github.com/gooffylook-rgb/Finza-v.7.1" target="_blank" rel="noopener noreferrer">⌂ Ver proyecto en GitHub<br><small>Código y actualizaciones</small></a></div></div>
+<div class="device-stage" aria-label="Vista de Finza.M"><div class="demo-badge">Demo<b>72h</b></div><div class="laptop"><img src="images/dashboard.jpg" alt="Panel de control de Finza.M" loading="lazy"></div><div class="finza-footer">Simple · Seguro · Hecho para crecer</div></div></div></section>
 
 <section class="services" id="servicios">
   <div class="container">
@@ -165,30 +176,32 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
     </div>
     <div class="services-layout">
       <div class="services-grid">
-        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v5h5M8 12h8M8 16h8M8 8h4"/></svg></div><h3>Teneduría de Libros</h3><p>Registro ordenado de operaciones y documentación para sostener una contabilidad útil y trazable.</p><a class="service-link" href="#contacto">Solicitar servicio →</a></article>
+        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v5h5M8 12h8M8 16h8M8 8h4"/></svg></div><h3>Teneduría de Libros</h3><p>Registro ordenado de operaciones y documentación para sostener una contabilidad útil y trazable.</p><a class="service-link" href="#asistente" data-service="Teneduría de Libros">Solicitar servicio →</a></article>
         <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="8" height="15" rx="1"/><rect x="13" y="3" width="8" height="17" rx="1"/><path d="M6 9h2M6 13h2M16 8h2M16 12h2M16 16h2"/></svg></div><h3>Contabilidad Integral</h3><p>Finza.M, Versat, Sarasola y esquemas de contabilidad total o parcial según tu operación.</p><a class="service-link" href="#finza">Ver Finza.M →</a></article>
-        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 15l3-3 3 2 4-5M7 8h.01"/></svg></div><h3>Estados Financieros</h3><p>Presentación, análisis y explicación de la información para que los números sirvan para decidir.</p><a class="service-link" href="#contacto">Consultar →</a></article>
-        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h4"/><path d="M17 15v5M14.5 17.5H19.5"/></svg></div><h3>Impuestos</h3><p>Cálculo, revisión y orientación tributaria con atención al marco aplicable en Cuba.</p><a class="service-link" href="#contacto">Solicitar orientación →</a></article>
-        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14c3.2 0 5.5 2.3 5.5 5.5"/></svg></div><h3>Asesoría de Capital Humano</h3><p>Apoyo en organización laboral, documentación, cargos y procesos vinculados a las personas.</p><a class="service-link" href="#contacto">Consultar →</a></article>
-        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3v17M5 7h14M7 7l-3 6h6zM21 7l-3 6h6zM8 20h8"/></svg></div><h3>Asesoría Jurídica y Laboral</h3><p>Orientación documental y contractual para reducir errores y mejorar la seguridad de tus operaciones.</p><a class="service-link" href="#contacto">Consultar →</a></article>
-        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><path d="M7 15l3-4 3 2 5-7"/><circle cx="18" cy="6" r="1"/></svg></div><h3>Análisis Estadístico</h3><p>Convierte datos operativos en indicadores y gráficos comprensibles para la gestión.</p><a class="service-link" href="#contacto">Consultar →</a></article>
-        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V7l8-4 8 4v13z"/><path d="M8 12h8M8 16h8M9 20v-4h6v4"/></svg></div><h3>Estudios de Factibilidad</h3><p>Proyecciones, punto de equilibrio y análisis de riesgos antes de comprometer recursos.</p><a class="service-link" href="#contacto">Evaluar proyecto →</a></article>
+        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 15l3-3 3 2 4-5M7 8h.01"/></svg></div><h3>Estados Financieros</h3><p>Presentación, análisis y explicación de la información para que los números sirvan para decidir.</p><a class="service-link" href="#asistente" data-service="Consulta sobre Estados Financieros">Consultar →</a></article>
+        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h4"/><path d="M17 15v5M14.5 17.5H19.5"/></svg></div><h3>Impuestos</h3><p>Cálculo, revisión y orientación tributaria con atención al marco aplicable en Cuba.</p><a class="service-link" href="#asistente" data-service="Necesito orientación sobre impuestos">Solicitar orientación →</a></article>
+        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14c3.2 0 5.5 2.3 5.5 5.5"/></svg></div><h3>Asesoría de Capital Humano</h3><p>Apoyo en organización laboral, documentación, cargos y procesos vinculados a las personas.</p><a class="service-link" href="#asistente" data-service="Necesito asesoría de Capital Humano">Consultar →</a></article>
+        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3v17M5 7h14M7 7l-3 6h6zM21 7l-3 6h6zM8 20h8"/></svg></div><h3>Asesoría Jurídica y Laboral</h3><p>Orientación documental y contractual para reducir errores y mejorar la seguridad de tus operaciones.</p><a class="service-link" href="#asistente" data-service="Necesito orientación jurídica y laboral">Consultar →</a></article>
+        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><path d="M7 15l3-4 3 2 5-7"/><circle cx="18" cy="6" r="1"/></svg></div><h3>Análisis Estadístico</h3><p>Convierte datos operativos en indicadores y gráficos comprensibles para la gestión.</p><a class="service-link" href="#asistente" data-service="Necesito análisis estadístico">Consultar →</a></article>
+        <article class="service-card"><div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V7l8-4 8 4v13z"/><path d="M8 12h8M8 16h8M9 20v-4h6v4"/></svg></div><h3>Estudios de Factibilidad</h3><p>Proyecciones, punto de equilibrio y análisis de riesgos antes de comprometer recursos.</p><a class="service-link" href="#asistente" data-service="Quiero evaluar la factibilidad de un proyecto">Evaluar proyecto →</a></article>
       </div>
 
       <aside class="assistant" id="asistente" aria-label="Asistente virtual Martínez">
         <div class="assistant-head">
-          <h3>Tu Asistente <span>Virtual Martínez</span></h3>
-          <div class="avatar-wrap"><img src="images/avatar-definitivo.png" id="chatAvatarImg" alt="Asistente virtual Martínez" loading="lazy"><div class="question">?</div></div>
+          <div class="assistant-status">Disponible</div>
+          <h3>Tu Asistente<br><span>Virtual Martínez</span></h3>
+          <p class="assistant-sub">Orientación profesional · Respuestas con base legal</p>
+          <div class="avatar-wrap"><img src="images/avatar-definitivo.png" id="chatAvatarImg" alt="Asistente virtual Martínez" loading="lazy"></div>
         </div>
         <div class="chat">
           <div class="chat-window" id="chatWindow" aria-live="polite">
             <div class="bubble bot">Hola, soy el asistente virtual de Consultoría Martínez. Es un gusto atenderte. ¿Qué necesitas resolver hoy?</div>
           </div>
           <div class="quick" id="quickOptions">
-            <button type="button" data-msg="Conocer Finza.M">Conocer Finza.M</button>
-            <button type="button" data-msg="Consultar un servicio">Consultar un servicio</button>
+            <button type="button" data-msg="Información de Finza.M">Información de Finza.M</button>
+            <button type="button" data-msg="Teneduría de libros">Teneduría de libros</button>
             <button type="button" data-msg="Ayuda fiscal">Ayuda fiscal</button>
-            <button type="button" data-msg="Hablar con un asesor">Hablar con un asesor</button>
+            <button type="button" data-msg="Consulta jurídica">Consulta jurídica</button>
           </div>
           <form class="chat-form" id="chatForm"><input id="chatInput" type="text" maxlength="240" autocomplete="off" placeholder="Escribe tu mensaje..." aria-label="Mensaje para el asistente"><button class="send" type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3l2 7 11 2-11 2z"/></svg></button></form>
           <a class="wa" id="whatsappBtn" href="https://wa.me/5354514448" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.5 5.9L.2 24l6.4-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4Zm-8.4 18.2h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.9-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8Zm5.4-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg> Conversa con nuestro WhatsApp</a>
@@ -200,8 +213,8 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
 
 <section class="resources" id="recursos">
   <div class="container">
-    <div class="section-heading"><div class="eyebrow">Información para decidir mejor</div><h2>Recursos y <span>actualizaciones</span></h2><p>Contenido pensado para empresarios: claro, práctico y separado de la asesoría personalizada.</p></div>
-    <div class="tabs" id="newsTabs"><button class="tab active" data-cat="all">Todas</button><button class="tab" data-cat="fiscal">Fiscal</button><button class="tab" data-cat="tips">Tips</button><button class="tab" data-cat="promo">Promociones</button></div>
+    <div class="section-heading"><div class="eyebrow">Información para decidir mejor</div><h2>Recursos y <span>actualizaciones</span></h2><p>Un centro vivo de normativa, análisis, guías y actualizaciones. Cada publicación debe indicar su tipo, fecha y estado de revisión.</p></div>
+    <div class="resource-hub-note"><strong>Centro de información.</strong> Las publicaciones se organizarán por categoría y pasarán por una revisión antes de aparecer públicamente. La futura conexión con fuentes autorizadas alimentará esta sección a través del backend, no directamente desde WhatsApp.</div><div class="tabs" id="newsTabs"><button class="tab active" data-cat="all">Todas</button><button class="tab" data-cat="fiscal">Fiscal</button><button class="tab" data-cat="normativa">Normativa</button><button class="tab" data-cat="fiscal">Fiscal</button><button class="tab" data-cat="laboral">Laboral</button><button class="tab" data-cat="contable">Contable</button><button class="tab" data-cat="guias">Guías</button></div>
     <div class="news-grid" id="newsGrid"></div>
   </div>
 </section>
@@ -241,7 +254,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
       </section>
       <section class="admin-pane" id="pane-chat">
         <div class="form-grid">
-          <div class="field full"><label for="quickInput">Opciones rápidas, separadas por coma</label><input id="quickInput" value="Conocer Finza.M,Consultar un servicio,Ayuda fiscal,Hablar con un asesor"></div>
+          <div class="field full"><label for="quickInput">Opciones rápidas, separadas por coma</label><input id="quickInput" value="Información de Finza.M,Teneduría de libros,Ayuda fiscal,Consulta jurídica"></div>
           <div class="field"><label for="customQ">Nueva pregunta</label><input id="customQ" placeholder="Ej. ¿Cómo contratar?"></div>
           <div class="field"><label for="customA">Respuesta</label><textarea id="customA" placeholder="Respuesta del asistente"></textarea></div>
         </div>
@@ -280,7 +293,7 @@ const defaults = {
   wa:"5354514448",
   finzaDemo:"https://gooffylook-rgb.github.io/Finza-v.7.1/",
   welcome:"Hola, soy el asistente virtual de Consultoría Martínez. Es un gusto atenderte. ¿Qué necesitas resolver hoy?",
-  quick:["Conocer Finza.M","Consultar un servicio","Ayuda fiscal","Hablar con un asesor"],
+  quick:["Información de Finza.M","Teneduría de libros","Ayuda fiscal","Consulta jurídica"],
   qa:[
     {q:"hola",a:"¡Hola! Bienvenido a Consultoría Martínez. Es un gusto atenderte. Puedo orientarte sobre contabilidad, impuestos, capital humano, control, factibilidad o Finza.M. Cuéntame qué situación tienes y empezamos por lo importante."},
     {q:"buenos dias",a:"¡Buenos días! Gracias por visitar Consultoría Martínez. ¿Qué aspecto de tu negocio quieres ordenar o revisar?"}, 
@@ -345,19 +358,29 @@ function addAction(label,url){
  wrap.appendChild(a);w.appendChild(wrap);w.scrollTop=w.scrollHeight;
 }
 function showFinzaAction(){addAction("Abrir DEMO de Finza.M · 72 horas",defaults.finzaDemo)}
+function typingDelay(text){
+ const n=String(text||"").trim().length;
+ return Math.min(1250, Math.max(520, 380 + n*14 + Math.random()*180));
+}
+function addTyping(){
+ const w=$("#chatWindow"), d=document.createElement("div");
+ d.className="typing";d.id="assistantTyping";d.setAttribute("aria-label","El asistente está escribiendo");
+ d.innerHTML="<i></i><i></i><i></i>";w.appendChild(d);w.scrollTop=w.scrollHeight;return d;
+}
 function sendChat(text){
  text=String(text||"").trim();if(!text)return;
  addBubble(text,"user");
+ const indicator=addTyping();
+ const delay=typingDelay(text);
  setTimeout(()=>{
+   indicator.remove();
    const result = window.MartinezAssistant.reply(text, getConfig());
    window.MartinezAssistant.lastResult = result;
    addBubble(result.reply,"bot");
    if(result.action === "finza") showFinzaAction();
    if(result.action === "advisor") addAction("Hablar con un asesor de Consultoría Martínez", "https://wa.me/"+getConfig().wa+"?text=Hola%20Consultor%C3%ADa%20Mart%C3%ADnez%2C%20quiero%20recibir%20orientaci%C3%B3n%20sobre%20mi%20situaci%C3%B3n.");
-   if(result.softLead){
-      addAction("Quiero recibir orientación personalizada", "#contacto");
-   }
- },350)
+   if(result.softLead){addAction("Quiero recibir orientación personalizada", "#contacto");}
+ },delay)
 }
 $("#chatForm").addEventListener("submit",e=>{e.preventDefault();const i=$("#chatInput");sendChat(i.value);i.value=""});
 
@@ -373,13 +396,13 @@ function renderQA(){
  c.qa.forEach((x,i)=>{const d=document.createElement("div");d.className="list-item";d.innerHTML="<div><strong>"+escapeHTML(x.q)+"</strong><small>"+escapeHTML(x.a)+"</small></div><button class='admin-btn danger' data-del-qa='"+i+"'>Eliminar</button>";list.appendChild(d)});
  $$("[data-del-qa]").forEach(b=>b.onclick=()=>{const c=getConfig();c.qa.splice(Number(b.dataset.delQa),1);setStore(STORE.qa,c.qa);renderQA()});
 }
-function iconFor(cat){return cat==="fiscal"?"<path d='M5 3h10l4 4v14H5z'/><path d='M15 3v5h5M8 12h8M8 16h8'/>":cat==="tips"?"<path d='M9 20h6M10 23h4M8 15a6 6 0 1 1 8 0c-.9.7-1 1.7-1 3H9c0-1.3-.1-2.3-1-3Z'/>":"<circle cx='12' cy='12' r='8'/><path d='M12 8v5l3 2'/>";
+function iconFor(cat){return cat==="normativa"?"<path d='M5 3h10l4 4v14H5z'/><path d='M15 3v5h5M8 12h8M8 16h8'/>":cat==="fiscal"?"<path d='M5 3h10l4 4v14H5z'/><path d='M15 3v5h5M8 12h8M8 16h8'/>":cat==="tips"?"<path d='M9 20h6M10 23h4M8 15a6 6 0 1 1 8 0c-.9.7-1 1.7-1 3H9c0-1.3-.1-2.3-1-3Z'/>":"<circle cx='12' cy='12' r='8'/><path d='M12 8v5l3 2'/>";
 }
 function renderNews(filter="all"){
  const c=getConfig(),g=$("#newsGrid");g.innerHTML="";
  c.news.filter(n=>filter==="all"||n.cat===filter).forEach(n=>{
   const d=document.createElement("article");d.className="news-card";
-  const link=n.link||"#contacto";d.innerHTML="<div class='news-art'><span class='news-cat'>"+escapeHTML(n.cat)+"</span><svg viewBox='0 0 24 24' aria-hidden='true'>"+iconFor(n.cat)+"</svg></div><div class='news-body'><div class='news-date'>"+escapeHTML(n.date)+"</div><h3 class='news-title'>"+escapeHTML(n.title)+"</h3><p class='news-excerpt'>"+escapeHTML(n.excerpt)+"</p><a class='news-link' href='"+escapeHTML(link)+"'>Ver recurso →</a></div>";g.appendChild(d)
+  const link=n.link||"#recursos";d.innerHTML="<div class='news-art'><span class='news-cat'>"+escapeHTML(n.cat)+"</span><svg viewBox='0 0 24 24' aria-hidden='true'>"+iconFor(n.cat)+"</svg></div><div class='news-body'><div class='news-date'>"+escapeHTML(n.date)+"</div><h3 class='news-title'>"+escapeHTML(n.title)+"</h3><p class='news-excerpt'>"+escapeHTML(n.excerpt)+"</p><a class='news-link' href='"+escapeHTML(link)+"'>Ver recurso →</a></div>";g.appendChild(d)
  });
  if(!g.children.length)g.innerHTML="<p style='grid-column:1/-1;text-align:center;color:#777'>No hay recursos en esta categoría.</p>";
 }
@@ -391,6 +414,14 @@ $("#addQA").onclick=()=>{const q=$("#customQ").value.trim(),a=$("#customA").valu
 $("#addNews").onclick=()=>{const title=$("#newsTitle").value.trim(),excerpt=$("#newsExcerpt").value.trim();if(!title||!excerpt)return status($("#newsStatus"),"Título y texto son obligatorios.",false);const c=getConfig();c.news.unshift({id:Date.now(),title,excerpt,cat:$("#newsCat").value,date:$("#newsDate").value.trim()||"Agosto 2026",link:$("#newsLink").value.trim()||"#contacto"});setStore(STORE.news,c.news);$("#newsTitle").value="";$("#newsExcerpt").value="";$("#newsDate").value="";$("#newsLink").value="";renderNews();renderAdminNews();status($("#newsStatus"),"Recurso publicado.")};
 function renderAdminNews(){const list=$("#adminNewsList"),c=getConfig();list.innerHTML="";c.news.forEach((n,i)=>{const d=document.createElement("div");d.className="list-item";d.innerHTML="<div><strong>"+escapeHTML(n.title)+"</strong><small>"+escapeHTML(n.date)+" · "+escapeHTML(n.cat)+"</small></div><button class='admin-btn danger' data-del-news='"+i+"'>Eliminar</button>";list.appendChild(d)});$$("[data-del-news]").forEach(b=>b.onclick=()=>{const c=getConfig();c.news.splice(Number(b.dataset.delNews),1);setStore(STORE.news,c.news);renderNews();renderAdminNews()})}
 $("#resetLocal").onclick=()=>{Object.values(STORE).forEach(k=>localStorage.removeItem(k));applyConfig();renderQA();renderAdminNews();status($("#generalStatus"),"Configuración local restaurada.")};
+
+// K.6: contextual service request — preserve intent and avoid unnecessary navigation to contact.
+$$('.service-link[data-service]').forEach(link=>link.addEventListener('click',e=>{
+  e.preventDefault();
+  const service=link.dataset.service;
+  document.querySelector('#asistente').scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(()=>sendChat('Necesito solicitar el servicio: '+service),420);
+}));
 
 // mobile nav
 $("#menuToggle").onclick=()=>{const open=$("#mainNav").classList.toggle("open");$("#menuToggle").setAttribute("aria-expanded",open)};
