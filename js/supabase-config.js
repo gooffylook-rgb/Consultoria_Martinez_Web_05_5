@@ -13,7 +13,7 @@
 // que queden visibles en el sitio público.
 // =========================================================
 
-const SUPABASE_URL = "https://vwidkuebimvzoiyodjff.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://vwidkuebimvzoiyodjff.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_OFBSAlL5CsPm7YhU8Sxj3Q_NmbQEEkH";
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
