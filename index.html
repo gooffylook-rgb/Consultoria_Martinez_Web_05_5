@@ -92,7 +92,7 @@ a{color:inherit}
 .assistant-sub{font:600 .73rem/1.35 "Montserrat";color:#596077;margin:7px 0 12px}
 .avatar-wrap{width:100%;height:310px;margin:0 auto;position:relative;display:flex;justify-content:center;align-items:flex-end;overflow:hidden;border-radius:18px 18px 0 0;background:radial-gradient(circle at 50% 18%,#9c5dff 0%,#6034b8 40%,#29115c 100%)}
 .avatar-wrap:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 85%,rgba(255,255,255,.13),transparent 30%),radial-gradient(circle at 84% 12%,rgba(255,255,255,.10),transparent 25%);pointer-events:none}
-.avatar-wrap img{height:104%;width:112%;max-width:none;object-fit:contain;object-position:center bottom;position:relative;z-index:1;filter:drop-shadow(0 18px 20px rgba(14,4,38,.30))}
+.avatar-wrap img{height:100%;width:100%;max-width:none;object-fit:cover;object-position:center top;position:relative;z-index:1;filter:drop-shadow(0 18px 20px rgba(14,4,38,.30))}
 .avatar-wrap:after{content:"";position:absolute;left:10%;right:10%;bottom:-8px;height:30px;border-radius:50%;background:radial-gradient(ellipse,rgba(11,4,28,.35),transparent 68%);pointer-events:none;z-index:2}
 .question{display:none}
 .chat{padding:14px 16px 17px;background:#fff}.chat-window{max-height:235px;overflow:auto;display:flex;flex-direction:column;gap:9px;padding-right:2px}.bubble{max-width:92%;padding:11px 13px;border-radius:14px;font-size:.78rem;line-height:1.42;white-space:pre-line}.bubble.bot{align-self:flex-start;background:#f4f2f7;color:#25263d;border-top-left-radius:5px}.bubble.user{align-self:flex-end;background:linear-gradient(135deg,#5030b5,#7647dc);color:#fff;border-top-right-radius:5px}
@@ -143,7 +143,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
       <img src="images/logo-header.png" alt="Logotipo de Consultoría Martínez" id="headerLogo">
     </a>
     <nav class="nav" id="mainNav" aria-label="Navegación principal">
-      <a class="active" href="#inicio">Inicio</a><a href="#finza">Finza.M</a><a href="#servicios">Servicios</a><a href="#recursos">Recursos</a><a href="#contacto">Contacto</a>
+      <a class="active" href="#inicio">Inicio</a><a href="#finza">Finza.M</a><a href="#servicios">Servicios</a><a href="recursos.html">Recursos</a><a href="#contacto">Contacto</a>
     </nav>
     <button class="menu" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -164,7 +164,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
 <section class="product" id="finza"><div class="container product-inner">
 <div class="product-copy"><div class="finza-kicker"><span class="finza-mark">F</span> Tecnología propia</div><h2>FINZA.<span>M</span></h2><div class="finza-sub">Gestión · Control · Información para decidir</div><p class="finza-desc">El sistema contable y de gestión creado por Consultoría Martínez, diseñado para acompañar la realidad operativa de los negocios en Cuba.</p>
 <div class="finza-features"><div class="finza-feature"><i>✓</i>Contabilidad multi-actor</div><div class="finza-feature"><i>✓</i>POS + ventas</div><div class="finza-feature"><i>✓</i>Control de inventario</div><div class="finza-feature"><i>✓</i>Informes automáticos</div></div>
-<div class="finza-actions"><a class="btn finza-demo" href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">Probar DEMO 72 horas ↗</a><a class="btn finza-github" href="https://github.com/gooffylook-rgb/Finza-v.7.1" target="_blank" rel="noopener noreferrer">⌂ Ver proyecto en GitHub<br><small>Código y actualizaciones</small></a></div></div>
+<div class="finza-actions"><a class="btn finza-demo" href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">Probar DEMO 72 horas ↗</a></div></div>
 <div class="device-stage" aria-label="Vista de Finza.M"><div class="demo-badge">Demo<b>72h</b></div><div class="laptop"><img src="images/dashboard.jpg" alt="Panel de control de Finza.M" loading="lazy"></div><div class="finza-footer">Simple · Seguro · Hecho para crecer</div></div></div></section>
 
 <section class="services" id="servicios">
@@ -214,7 +214,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
 <section class="resources" id="recursos">
   <div class="container">
     <div class="section-heading"><div class="eyebrow">Información para decidir mejor</div><h2>Recursos y <span>actualizaciones</span></h2><p>Un centro vivo de normativa, análisis, guías y actualizaciones. Cada publicación debe indicar su tipo, fecha y estado de revisión.</p></div>
-    <div class="resource-hub-note"><strong>Centro de información.</strong> Las publicaciones se organizarán por categoría y pasarán por una revisión antes de aparecer públicamente. La futura conexión con fuentes autorizadas alimentará esta sección a través del backend, no directamente desde WhatsApp.</div><div class="tabs" id="newsTabs"><button class="tab active" data-cat="all">Todas</button><button class="tab" data-cat="fiscal">Fiscal</button><button class="tab" data-cat="normativa">Normativa</button><button class="tab" data-cat="fiscal">Fiscal</button><button class="tab" data-cat="laboral">Laboral</button><button class="tab" data-cat="contable">Contable</button><button class="tab" data-cat="guias">Guías</button></div>
+    <div class="resource-hub-note"><strong>Centro de información.</strong> Las publicaciones se organizarán por categoría y pasarán por una revisión antes de aparecer públicamente. La futura conexión con fuentes autorizadas alimentará esta sección a través del backend, no directamente desde WhatsApp.</div><div class="tabs" id="newsTabs"><button class="tab active" data-cat="all">Todas</button><button class="tab" data-cat="fiscal">Fiscal</button><button class="tab" data-cat="normativa">Normativa</button><button class="tab" data-cat="laboral">Laboral</button><button class="tab" data-cat="contable">Contable</button><button class="tab" data-cat="guias">Guías</button></div>
     <div class="news-grid" id="newsGrid"></div>
   </div>
 </section>
@@ -231,7 +231,7 @@ footer{background:#110b18;color:#fff;padding:54px 0 22px}.footer-grid{display:gr
   <div class="container footer-grid">
     <div class="footer-brand"><img src="images/logo-negative-header.png" id="footerLogo" alt="Consultoría Martínez"><p>Asesoría contable, financiera, fiscal, jurídica y de capital humano para emprendedores y PYMEs.</p></div>
     <div class="footer-col"><h4>Servicios</h4><ul><li><a href="#servicios">Teneduría</a></li><li><a href="#servicios">Contabilidad</a></li><li><a href="#servicios">Estados financieros</a></li><li><a href="#servicios">Impuestos</a></li></ul></div>
-    <div class="footer-col"><h4>Recursos</h4><ul><li><a href="#finza">Finza.M</a></li><li><a href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">DEMO 72 horas</a></li><li><a href="#recursos">Actualizaciones</a></li><li><a href="#asistente">Asistente virtual</a></li></ul></div>
+    <div class="footer-col"><h4>Recursos</h4><ul><li><a href="#finza">Finza.M</a></li><li><a href="https://gooffylook-rgb.github.io/Finza-v.7.1/" target="_blank" rel="noopener noreferrer">DEMO 72 horas</a></li><li><a href="recursos.html">Centro de Información</a></li><li><a href="#asistente">Asistente virtual</a></li></ul></div>
     <div class="footer-col"><h4>Contacto</h4><div class="footer-contact">📱 <a href="https://wa.me/5354514448" target="_blank" rel="noopener noreferrer">+53 54514448</a></div><div class="footer-contact">💬 <a href="https://chat.whatsapp.com/J2zimmcwGhI1BwjDHLU1NP" target="_blank" rel="noopener noreferrer">Grupo de WhatsApp</a></div><div class="footer-contact">📍 Cuba</div></div>
   </div>
   <div class="container footer-bottom"><span>© 2026 Consultoría Martínez · Finza.M</span><span>Información orientativa; la aplicación de normas debe verificarse según el caso y la vigencia normativa.</span></div>
