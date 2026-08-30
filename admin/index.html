@@ -11,23 +11,33 @@ input,select,textarea,button{font:inherit}input,select,textarea{width:100%;paddi
 .item{padding:14px;border:1px solid #e3ddeb;border-radius:14px;margin:10px 0;background:rgba(255,255,255,.72)}.meta{font-size:12px;color:var(--mut);margin:5px 0}.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#ece5f7;font-size:11px;font-weight:bold;margin-right:5px}.empty{color:var(--mut);padding:12px 0}
 .warn{padding:12px 14px;border-radius:12px;background:#fff3cd;font-size:13px}.ok{padding:12px 14px;border-radius:12px;background:#e8f7ee;font-size:13px}.err{padding:12px 14px;border-radius:12px;background:#fde8ec;font-size:13px;color:#8a1f3a}
 .salir{background:#eee8f6;color:var(--ink);align-self:flex-start;white-space:nowrap}
-@media(max-width:760px){.wrap{padding:18px}.ingest{grid-template-columns:1fr}.card{padding:16px}}
+.media{margin-top:12px;padding-top:12px;border-top:1px dashed #d8d1e3;display:none}.media.abierto{display:block}
+.miniaturas{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}.mini{width:84px}.mini img{width:84px;height:84px;object-fit:cover;border-radius:10px;border:1px solid #d8d1e3;display:block}.mini a{font-size:11px;word-break:break-all}.mini small{display:block;color:var(--mut);font-size:10px}.mini button{padding:3px 6px;font-size:11px;margin-top:3px;width:100%}
+.mediaForm{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:760px){.wrap{padding:18px}.ingest{grid-template-columns:1fr}.card{padding:16px}.mediaForm{grid-template-columns:1fr}}
 </style></head><body><main class="wrap">
-<div class="hero"><div><div class="ey">05.5.2-K.9 · backend real conectado</div><h1>Ingesta documental y gobierno de información</h1><p>Una entrada no se publica ni se convierte automáticamente en conocimiento del asistente. Este panel registra procedencia, metadatos, extracción disponible, revisión y autorizaciones — guardado en una base de datos real, no en este navegador.</p></div><button class="salir" id="salir">Cerrar sesión (<span id="quien"></span>)</button></div>
+<div class="hero"><div><div class="ey">05.5.2-K.9 · backend real conectado</div><h1>Ingesta documental y gobierno de información</h1><p>Una entrada no se publica ni se convierte automáticamente en conocimiento del asistente. Este panel registra procedencia, metadatos, extracción de texto, revisión, autorizaciones y multimedia de publicación — guardado en una base de datos real, no en este navegador.</p></div><button class="salir" id="salir">Cerrar sesión (<span id="quien"></span>)</button></div>
 <div id="estadoConexion" class="warn">Conectando con la base de datos…</div>
 <div class="card grid" id="stats"></div>
 <section class="card"><h2>1. Recibir y registrar</h2><div class="ingest"><div class="drop" id="drop"><b>Arrastra un archivo aquí</b><p>PDF · DOCX · XLSX · TXT · imágenes (OCR futuro)</p><input id="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.md,.png,.jpg,.jpeg,image/*"><small id="fileInfo">También puedes registrar un enlace, publicación o mensaje autorizado sin adjuntar archivo.</small></div>
 <div><label>Título *</label><input id="title" required placeholder="Identificación clara del contenido"><label>Fuente *</label><input id="source" placeholder="Organismo, sitio, grupo autorizado…"><label>Tipo de fuente</label><select id="sourceType"><option value="official">Oficial</option><option value="consultoria_martinez">Consultoría Martínez</option><option value="authorized_channel">Canal autorizado</option><option value="educational">Educativa</option><option value="other">Otra</option></select><label>Tipo de contenido</label><select id="contentType"><option value="normativa">Normativa</option><option value="fiscal">Fiscal</option><option value="laboral">Laboral</option><option value="contable">Contable</option><option value="guia_educativa">Guía</option><option value="analisis_profesional">Análisis profesional</option><option value="faq">FAQ</option><option value="publication">Publicación / mensaje</option></select><label>Enlace o referencia</label><input id="reference" placeholder="URL o referencia interna"></div></div>
 <div class="ingest" style="margin-top:10px"><div><label>Fecha del documento</label><input id="docDate" type="date"><label>Entrada en vigor</label><input id="effectiveDate" type="date"><label>Estado jurídico</label><select id="legalStatus"><option value="pending_review">Pendiente de verificar</option><option value="vigente">Vigente</option><option value="modificado">Modificada</option><option value="sustituido">Sustituida</option><option value="derogado">Derogada</option><option value="historico">Histórica</option></select></div>
 <div><label>Temas (separados por coma)</label><input id="topics" placeholder="tributación, declaración jurada"><label>Relaciones con otros documentos</label><input id="relations" placeholder="ID o referencia: modifica / sustituye / deroga…"><label>Notas de recepción</label><textarea id="notes" rows="4" placeholder="Contexto, procedencia y observaciones"></textarea></div></div>
-<div class="actions"><button id="save">Registrar en bandeja</button><button class="alt" id="clear" type="button">Limpiar</button></div></section>
+<div class="actions"><button id="save">Registrar en bandeja</button><button class="alt" id="clear" type="button">Limpiar</button></div>
+<div id="extraccionInfo" class="meta"></div></section>
 <section class="card"><h2>2. Bandeja y trazabilidad</h2><div id="list">Cargando…</div></section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="../js/supabase-config.js"></script>
 <script>
+if (window['pdfjsLib']) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
 const $=id=>document.getElementById(id);
-let selected=null, sesion=null;
+let selected=null, sesion=null, mediaAbierta={};
 
 function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
@@ -54,44 +64,162 @@ async function cargarLista(){
 function render(a){
   const states=['inbox','classified','review','approved','published','rejected','archived'];
   $('stats').innerHTML = states.map(s=>`<div class="stat"><small>${s}</small><strong>${a.filter(x=>x.status===s).length}</strong></div>`).join('');
-  $('list').innerHTML = a.length ? a.map(x=>`<article class="item"><b>${esc(x.title)}</b><div class="meta">${esc(x.source)} · ${esc(x.content_type)} · recibido ${new Date(x.received_at).toLocaleString()}</div><span class="badge">${esc(x.status)}</span><span class="badge">asistente: ${x.assistant_authorized?'sí':'no'}</span><span class="badge">recursos: ${x.resources_authorized?'sí':'no'}</span><span class="badge">extracción: ${esc(x.extraction_status)}</span><div class="actions" style="margin-top:10px"><button onclick="mover('${x.id}','classified')">Clasificar</button><button onclick="mover('${x.id}','review')">Revisión</button><button onclick="mover('${x.id}','approved')">Aprobar</button><button onclick="autorizar('${x.id}','${x.status}','assistant_authorized')">Autorizar asistente</button><button onclick="autorizar('${x.id}','${x.status}','resources_authorized')">Autorizar recursos</button><button onclick="publicar('${x.id}',${x.resources_authorized})">Publicar</button><button class="alt" onclick="mover('${x.id}','archived')">Archivar</button><button class="danger" onclick="mover('${x.id}','rejected')">Rechazar</button></div><div class="meta">${esc(x.file_name||'sin archivo')}</div></article>`).join('') : '<div class="empty">No hay documentos registrados.</div>';
+  $('list').innerHTML = a.length ? a.map(x=>`<article class="item"><b>${esc(x.title)}</b><div class="meta">${esc(x.source)} · ${esc(x.content_type)} · recibido ${new Date(x.received_at).toLocaleString()}</div><span class="badge">${esc(x.status)}</span><span class="badge">asistente: ${x.assistant_authorized?'sí':'no'}</span><span class="badge">recursos: ${x.resources_authorized?'sí':'no'}</span><span class="badge">descarga pública: ${x.public_downloadable?'sí':'no'}</span><span class="badge">extracción: ${esc(x.extraction_status)}</span><div class="actions" style="margin-top:10px"><button onclick="mover('${x.id}','classified')">Clasificar</button><button onclick="mover('${x.id}','review')">Revisión</button><button onclick="mover('${x.id}','approved')">Aprobar</button><button onclick="autorizar('${x.id}','${x.status}','assistant_authorized')">Autorizar asistente</button><button onclick="autorizar('${x.id}','${x.status}','resources_authorized')">Autorizar recursos</button><button onclick="autorizar('${x.id}','${x.status}','public_downloadable')">Permitir descarga pública</button><button onclick="publicar('${x.id}',${x.resources_authorized})">Publicar</button><button class="alt" onclick="mover('${x.id}','archived')">Archivar</button><button class="danger" onclick="mover('${x.id}','rejected')">Rechazar</button><button class="alt" onclick="toggleMedia('${x.id}')">🖼️ Multimedia</button></div><div class="meta">${esc(x.file_name||'sin archivo')}${x.extracted_text ? ' · texto extraído disponible' : ''}</div><div class="media" id="media-${x.id}"><div class="meta">Imágenes, enlaces o archivos descargables para acompañar la publicación:</div><div class="miniaturas" id="miniaturas-${x.id}"></div><div class="mediaForm"><input type="file" id="imgFile-${x.id}" accept="image/*"><input type="text" id="imgCaption-${x.id}" placeholder="Descripción de la imagen (opcional)"></div><button onclick="agregarImagen('${x.id}')">Agregar imagen</button><div class="mediaForm" style="margin-top:8px"><input type="text" id="linkUrl-${x.id}" placeholder="https://enlace-relacionado.com"><input type="text" id="linkCaption-${x.id}" placeholder="Descripción del enlace"></div><button class="alt" onclick="agregarEnlace('${x.id}')">Agregar enlace</button><div class="mediaForm" style="margin-top:8px"><input type="file" id="dlFile-${x.id}"><input type="text" id="dlCaption-${x.id}" placeholder="Descripción del archivo descargable"></div><button class="alt" onclick="agregarDescargable('${x.id}')">Agregar archivo descargable</button><div class="meta">El archivo descargable solo se ofrecerá al público si además activas "Permitir descarga pública" arriba.</div></div></article>`).join('') : '<div class="empty">No hay documentos registrados.</div>';
+  Object.keys(mediaAbierta).forEach(id=>{ if(mediaAbierta[id] && $('media-'+id)){ $('media-'+id).classList.add('abierto'); cargarMedia(id); } });
 }
 
 window.mover = async (id, status) => {
-  const { error } = await supabaseClient.from('documents').update({ status }).eq('id', id);
-  if (error){ alert('Error: '+error.message); return; }
-  await registrarAuditoria(id, 'estado → '+status);
+  const { error } = await supabaseClient.rpc('cambiar_estado', { p_document_id:id, p_nuevo_estado:status });
+  if (error){ alert('No se pudo cambiar el estado: '+error.message); return; }
   cargarLista();
 };
 
 window.autorizar = async (id, statusActual, campo) => {
-  if (statusActual !== 'approved' && statusActual !== 'published'){ alert('Primero debe estar aprobado.'); return; }
-  const { error } = await supabaseClient.from('documents').update({ [campo]: true }).eq('id', id);
-  if (error){ alert('Error: '+error.message); return; }
-  await registrarAuditoria(id, 'autorizado: '+campo);
+  const { error } = await supabaseClient.rpc('autorizar', { p_document_id:id, p_campo:campo });
+  if (error){ alert('No se pudo autorizar: '+error.message); return; }
   cargarLista();
 };
 
 window.publicar = async (id, resourcesAuthorized) => {
   if (!resourcesAuthorized){ alert('Debe autorizarse primero para Recursos.'); return; }
-  const { error } = await supabaseClient.from('documents').update({ status:'published' }).eq('id', id);
-  if (error){ alert('Error: '+error.message); return; }
-  await registrarAuditoria(id, 'publicado en recursos');
+  const { error } = await supabaseClient.rpc('cambiar_estado', { p_document_id:id, p_nuevo_estado:'published' });
+  if (error){ alert('No se pudo publicar: '+error.message); return; }
   cargarLista();
 };
 
-function extractInfo(f){
-  if(!f) return 'not_applicable';
-  const ext=(f.name.split('.').pop()||'').toLowerCase();
-  if(['txt','md'].includes(ext)) return 'available_local';
-  if(['pdf','doc','docx','xls','xlsx'].includes(ext)) return 'pending_processor';
-  return 'pending_ocr';
+// --- Multimedia de publicación ---
+window.toggleMedia = (id) => {
+  mediaAbierta[id] = !mediaAbierta[id];
+  const div = $('media-'+id);
+  div.classList.toggle('abierto', mediaAbierta[id]);
+  if (mediaAbierta[id]) cargarMedia(id);
+};
+
+async function cargarMedia(id){
+  const cont = $('miniaturas-'+id);
+  if (!cont) return;
+  cont.textContent = 'Cargando…';
+  const { data, error } = await supabaseClient.from('document_media').select('*').eq('document_id', id).order('sort_order');
+  if (error){ cont.innerHTML = `<div class="err">${esc(error.message)}</div>`; return; }
+  if (!data.length){ cont.innerHTML = '<div class="empty">Todavía no hay imágenes ni enlaces.</div>'; return; }
+  const items = await Promise.all(data.map(async m => {
+    let visual = '';
+    if (m.media_type === 'image' && m.storage_path){
+      const { data: pub } = supabaseClient.storage.from('publicaciones-media').getPublicUrl(m.storage_path);
+      visual = `<img src="${esc(pub.publicUrl)}" alt="${esc(m.caption||'')}">`;
+    } else if (m.media_type === 'link'){
+      visual = `<a href="${esc(m.url)}" target="_blank" rel="noopener">🔗 enlace</a>`;
+    } else if (m.media_type === 'file' && m.storage_path){
+      const { data: pub } = supabaseClient.storage.from('publicaciones-media').getPublicUrl(m.storage_path);
+      visual = `<a href="${esc(pub.publicUrl)}" target="_blank" rel="noopener">📎 archivo</a>`;
+    }
+    return `<div class="mini">${visual}<small>${esc(m.caption||'')}</small><button class="danger" onclick="eliminarMedia('${m.id}','${id}')">Quitar</button></div>`;
+  }));
+  cont.innerHTML = items.join('');
+}
+
+window.agregarImagen = async (id) => {
+  const fileInput = $('imgFile-'+id);
+  const caption = $('imgCaption-'+id).value.trim();
+  const file = fileInput.files[0];
+  if (!file){ alert('Elige una imagen primero.'); return; }
+  const ruta = `${id}/${Date.now()}_${file.name}`;
+  const { error: upErr } = await supabaseClient.storage.from('publicaciones-media').upload(ruta, file);
+  if (upErr){ alert('No se pudo subir la imagen: '+upErr.message); return; }
+  const { error } = await supabaseClient.from('document_media').insert({
+    document_id:id, media_type:'image', storage_path:ruta, caption: caption||null, created_by: sesion.user.id
+  });
+  if (error){ alert('No se pudo guardar la imagen: '+error.message); return; }
+  fileInput.value=''; $('imgCaption-'+id).value='';
+  cargarMedia(id);
+};
+
+window.agregarEnlace = async (id) => {
+  const url = $('linkUrl-'+id).value.trim();
+  const caption = $('linkCaption-'+id).value.trim();
+  if (!url){ alert('Escribe un enlace primero.'); return; }
+  const { error } = await supabaseClient.from('document_media').insert({
+    document_id:id, media_type:'link', url, caption: caption||null, created_by: sesion.user.id
+  });
+  if (error){ alert('No se pudo guardar el enlace: '+error.message); return; }
+  $('linkUrl-'+id).value=''; $('linkCaption-'+id).value='';
+  cargarMedia(id);
+};
+
+window.agregarDescargable = async (id) => {
+  const fileInput = $('dlFile-'+id);
+  const caption = $('dlCaption-'+id).value.trim();
+  const file = fileInput.files[0];
+  if (!file){ alert('Elige un archivo primero.'); return; }
+  const ruta = `${id}/${Date.now()}_${file.name}`;
+  const { error: upErr } = await supabaseClient.storage.from('publicaciones-media').upload(ruta, file);
+  if (upErr){ alert('No se pudo subir el archivo: '+upErr.message); return; }
+  const { error } = await supabaseClient.from('document_media').insert({
+    document_id:id, media_type:'file', storage_path:ruta, caption: caption||file.name, created_by: sesion.user.id
+  });
+  if (error){ alert('No se pudo guardar el archivo: '+error.message); return; }
+  fileInput.value=''; $('dlCaption-'+id).value='';
+  cargarMedia(id);
+};
+
+window.eliminarMedia = async (mediaId, docId) => {
+  const { error } = await supabaseClient.from('document_media').delete().eq('id', mediaId);
+  if (error){ alert('No se pudo quitar: '+error.message); return; }
+  cargarMedia(docId);
+};
+
+// --- Extracción de texto (punto 6) ---
+function extensionDe(f){ return (f.name.split('.').pop()||'').toLowerCase(); }
+
+async function extraerTexto(f){
+  if (!f) return { texto:null, estado:'not_applicable' };
+  const ext = extensionDe(f);
+  try{
+    if (['txt','md'].includes(ext)){
+      const texto = await f.text();
+      return { texto: texto.slice(0,20000), estado:'extracted' };
+    }
+    if (ext === 'pdf' && window['pdfjsLib']){
+      const buffer = await f.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+      let texto = '';
+      const maxPaginas = Math.min(pdf.numPages, 20);
+      for (let i=1; i<=maxPaginas; i++){
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        texto += content.items.map(it=>it.str).join(' ') + '\n';
+        if (texto.length > 20000) break;
+      }
+      return { texto: texto.slice(0,20000), estado: texto.trim() ? 'extracted' : 'failed_extraction' };
+    }
+    if (ext === 'docx' && window['mammoth']){
+      const buffer = await f.arrayBuffer();
+      const resultado = await mammoth.extractRawText({ arrayBuffer: buffer });
+      return { texto: (resultado.value||'').slice(0,20000), estado: resultado.value ? 'extracted' : 'failed_extraction' };
+    }
+    if ((ext === 'xlsx' || ext === 'xls') && window['XLSX']){
+      const buffer = await f.arrayBuffer();
+      const libro = XLSX.read(buffer, { type:'array' });
+      let texto = '';
+      libro.SheetNames.forEach(nombre=>{
+        texto += `--- ${nombre} ---\n` + XLSX.utils.sheet_to_csv(libro.Sheets[nombre]) + '\n';
+      });
+      return { texto: texto.slice(0,20000), estado: texto.trim() ? 'extracted' : 'failed_extraction' };
+    }
+    if (ext === 'doc' || ext === 'xls'){
+      return { texto:null, estado:'pending_processor' };
+    }
+    return { texto:null, estado:'pending_ocr' };
+  } catch(err){
+    return { texto:null, estado:'failed_extraction' };
+  }
 }
 
 function limpiar(){
   ['title','source','reference','docDate','effectiveDate','topics','relations','notes','file'].forEach(k=>$(k).value='');
   selected=null;
   $('fileInfo').textContent='También puedes registrar un enlace, publicación o mensaje autorizado sin adjuntar archivo.';
+  $('extraccionInfo').textContent='';
 }
 $('file').onchange=e=>{selected=e.target.files[0]||null;if(selected)$('fileInfo').textContent=selected.name+' · '+Math.round(selected.size/1024)+' KB'}
 $('drop').ondragover=e=>{e.preventDefault();$('drop').classList.add('drag')};
@@ -111,6 +239,10 @@ $('save').onclick=async ()=>{
     filePath = ruta;
   }
 
+  $('extraccionInfo').textContent = selected ? 'Extrayendo texto…' : '';
+  const { texto, estado } = await extraerTexto(selected);
+  $('extraccionInfo').textContent = '';
+
   const registro = {
     title, source,
     source_type: $('sourceType').value,
@@ -127,7 +259,8 @@ $('save').onclick=async ()=>{
     file_size: selected ? selected.size : null,
     file_type: selected ? selected.type : null,
     file_path: filePath,
-    extraction_status: extractInfo(selected),
+    extracted_text: texto,
+    extraction_status: estado,
     created_by: sesion.user.id
   };
 
