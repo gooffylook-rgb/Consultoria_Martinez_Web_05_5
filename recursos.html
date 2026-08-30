@@ -1,0 +1,144 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centro de Información — Consultoría Martínez</title>
+<meta name="description" content="Normativa, análisis y guías verificadas por Consultoría Martínez.">
+<style>
+:root{--p:#4d2b86;--p2:#8657bf;--ink:#24153f;--mut:#686574;--bg:#f3f1f8}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 0,#e8dcff,transparent 30%),var(--bg)}
+header{background:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px #24153f10}
+header a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:bold}
+header img{height:34px}
+header nav a{color:var(--p);font-weight:bold;text-decoration:none;margin-left:16px;font-size:14px}
+.wrap{max-width:960px;margin:auto;padding:26px}
+.hero{padding:10px 0 22px}.ey{font-size:11px;font-weight:bold;letter-spacing:1.4px;color:var(--p);text-transform:uppercase}
+.hero h1{margin:6px 0;font-size:clamp(26px,5vw,40px)}.hero p{color:var(--mut);max-width:700px}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.filtros button{border:1px solid #d8d1e3;background:#fff;color:var(--ink);border-radius:999px;padding:8px 16px;font-weight:bold;font-size:13px;cursor:pointer}
+.filtros button.activo{background:var(--p);color:#fff;border-color:var(--p)}
+.card{background:#fff;border:1px solid #e3ddeb;border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 10px 30px #24153f0d}
+.card h2{margin:0 0 6px;font-size:20px}
+.meta{font-size:12px;color:var(--mut);margin:4px 0}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#ece5f7;color:var(--p);font-size:11px;font-weight:bold;margin-right:6px;margin-top:6px}
+.desc{margin:12px 0;line-height:1.5}
+.tags{margin:8px 0}.tag{display:inline-block;background:#f3f1f8;color:var(--mut);border-radius:8px;padding:3px 9px;font-size:11px;margin:2px 4px 2px 0}
+.galeria{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.galeria img{width:130px;height:130px;object-fit:cover;border-radius:12px;border:1px solid #e3ddeb}
+.acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.acciones a{display:inline-block;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:bold;font-size:13px}
+.btn-oficial{background:var(--p);color:#fff}
+.btn-descarga{background:#eee8f6;color:var(--ink)}
+.vacio{text-align:center;color:var(--mut);padding:50px 20px}
+.cargando{text-align:center;color:var(--mut);padding:50px 20px}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:30px 20px}
+</style></head><body>
+<header>
+  <a href="index.html"><img src="images/logo-header.png" alt="Consultoría Martínez"><span>Consultoría Martínez</span></a>
+  <nav><a href="index.html">Inicio</a><a href="index.html#asistente">Asistente</a></nav>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <div class="ey">Información para decidir mejor</div>
+    <h1>Centro de Información</h1>
+    <p>Normativa, análisis y guías revisadas y publicadas por Consultoría Martínez. Cada publicación indica su fuente oficial, fecha y estado de vigencia.</p>
+  </div>
+  <div class="filtros" id="filtros"></div>
+  <div id="lista" class="cargando">Cargando publicaciones…</div>
+</main>
+<footer>© 2026 Consultoría Martínez · Información orientativa; la aplicación de normas debe verificarse según el caso y la vigencia normativa.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+const etiquetas = {
+  normativa:'Normativa', fiscal:'Fiscal', laboral:'Laboral', contable:'Contable',
+  guia_educativa:'Guía', analisis_profesional:'Análisis profesional', faq:'FAQ', publication:'Publicación'
+};
+const estadoLegal = {
+  pending_review:'Pendiente de verificar', vigente:'Vigente', modificado:'Modificada',
+  sustituido:'Sustituida', derogado:'Derogada', historico:'Histórica'
+};
+
+let recursos = [], mediaPorDocumento = {}, filtroActual = 'todas';
+
+async function cargar(){
+  const { data: docs, error } = await supabaseClient
+    .from('documents')
+    .select('*')
+    .eq('status','published')
+    .eq('resources_authorized', true)
+    .order('document_date', { ascending:false, nullsFirst:false });
+
+  if (error){ $('lista').innerHTML = `<div class="vacio">No se pudo cargar el Centro de Información en este momento.</div>`; return; }
+  recursos = docs || [];
+
+  if (recursos.length){
+    const ids = recursos.map(d=>d.id);
+    const { data: media } = await supabaseClient.from('document_media').select('*').in('document_id', ids).order('sort_order');
+    (media||[]).forEach(m=>{
+      if (!mediaPorDocumento[m.document_id]) mediaPorDocumento[m.document_id]=[];
+      mediaPorDocumento[m.document_id].push(m);
+    });
+  }
+
+  construirFiltros();
+  render();
+}
+
+function construirFiltros(){
+  const categorias = ['todas', ...new Set(recursos.map(d=>d.content_type))];
+  $('filtros').innerHTML = categorias.map(c=>{
+    const nombre = c==='todas' ? 'Todas' : (etiquetas[c]||c);
+    return `<button data-cat="${c}" class="${c===filtroActual?'activo':''}" onclick="filtrar('${c}')">${esc(nombre)}</button>`;
+  }).join('');
+}
+
+window.filtrar = (cat) => { filtroActual = cat; construirFiltros(); render(); };
+
+function urlPublica(path){
+  const { data } = supabaseClient.storage.from('publicaciones-media').getPublicUrl(path);
+  return data.publicUrl;
+}
+
+function render(){
+  const items = filtroActual==='todas' ? recursos : recursos.filter(d=>d.content_type===filtroActual);
+  if (!items.length){ $('lista').innerHTML = '<div class="vacio">Todavía no hay publicaciones en esta categoría.</div>'; return; }
+
+  $('lista').innerHTML = items.map(d=>{
+    const media = mediaPorDocumento[d.id] || [];
+    const imagenes = media.filter(m=>m.media_type==='image' && m.storage_path);
+    const enlaces = media.filter(m=>m.media_type==='link' && m.url);
+    const archivos = (d.public_downloadable ? media.filter(m=>m.media_type==='file' && m.storage_path) : []);
+
+    const badges = [
+      `<span class="badge">${esc(etiquetas[d.content_type]||d.content_type)}</span>`,
+      d.legal_status ? `<span class="badge">${esc(estadoLegal[d.legal_status]||d.legal_status)}</span>` : '',
+      d.document_date ? `<span class="badge">Fecha: ${esc(d.document_date)}</span>` : '',
+      d.effective_date ? `<span class="badge">Vigor: ${esc(d.effective_date)}</span>` : ''
+    ].join('');
+
+    const tags = (d.topics && d.topics.length) ? `<div class="tags">${d.topics.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>` : '';
+
+    const galeria = imagenes.length ? `<div class="galeria">${imagenes.map(m=>`<img src="${esc(urlPublica(m.storage_path))}" alt="${esc(m.caption||'')}">`).join('')}</div>` : '';
+
+    const botones = [];
+    if (d.reference) botones.push(`<a class="btn-oficial" href="${esc(d.reference)}" target="_blank" rel="noopener">Ver fuente oficial ↗</a>`);
+    enlaces.forEach(m=>botones.push(`<a class="btn-oficial" href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.caption||'Enlace relacionado')} ↗</a>`));
+    archivos.forEach(m=>botones.push(`<a class="btn-descarga" href="${esc(urlPublica(m.storage_path))}" target="_blank" rel="noopener">⬇ ${esc(m.caption||'Descargar')}</a>`));
+
+    return `<article class="card">
+      <h2>${esc(d.title)}</h2>
+      <div class="meta">Fuente: ${esc(d.source)}</div>
+      ${badges}
+      ${d.notes ? `<div class="desc">${esc(d.notes)}</div>` : ''}
+      ${tags}
+      ${galeria}
+      ${botones.length ? `<div class="acciones">${botones.join('')}</div>` : ''}
+    </article>`;
+  }).join('');
+}
+
+cargar();
+</script>
+</body></html>
